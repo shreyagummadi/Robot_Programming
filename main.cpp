@@ -17,7 +17,7 @@ int main(){
     
     
     std::vector<std::string> color_vec1{"blue","white"};
-    std::vector<std::string> color_vec2{"white","green"};
+    std::vector<std::string> color_vec2{"green","white"};
     std::vector<std::string> color_vec3{"green","white"};
 
     std:: string missing_1, missing_2, missing_3;
