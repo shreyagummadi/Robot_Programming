@@ -1,6 +1,13 @@
 #include <iostream>
 #include <vector>
 
+void print_vector(std::vector<std::string> color_vec){
+    for (unsigned int i = 0;i<color_vec.size();i++){
+        std::cout<<color_vec.at(i)<< " ";
+    }
+    std::cout<<std::endl;
+}
+
 void print_2d_vector(std::vector<std::vector<std::string>> color_vec_2d)
 {
     for (unsigned int i=0; i<color_vec_2d.size(); i++)
@@ -29,8 +36,16 @@ int main(){
     color_vec2.insert(color_vec2.begin(),missing_2);
     color_vec3.insert(color_vec3.begin()+1,missing_3);
     
+    std::cout<<"Vector 1: ";
+    print_vector(color_vec1);
+    std::cout<<"Vector 2: ";
+    print_vector(color_vec2);
+    std::cout<<"Vector 3: ";
+    print_vector(color_vec3);
+    
     std::vector<std::vector<std::string>> color_vec2D{color_vec1,color_vec2,color_vec3};;
     
+    std::cout<<"The final output is: "<<std::endl;
     print_2d_vector(color_vec2D);
     
     return 0;
