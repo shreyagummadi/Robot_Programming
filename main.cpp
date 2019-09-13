@@ -26,8 +26,8 @@ int main(){
     std::cin>> missing_1>>missing_2>>missing_3;
     
     color_vec1.push_back(missing_1);
-    color_vec2.push_back(missing_2);
-    color_vec3.push_back(missing_3);
+    color_vec2.insert(color_vec2.begin(),missing_2);
+    color_vec3.insert(color_vec3.begin()+1,missing_3);
     
     std::vector<std::vector<std::string>> color_vec2D{color_vec1,color_vec2,color_vec3};;
     
