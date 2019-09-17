@@ -80,7 +80,7 @@ int main()
     
     
     //Display size of the 2D vector
-    std::cout <<"Size of 2D vector is "<< color_vec_2d[0].size()*color_vec_2d.size()<< " (" << color_vec_2d[0].size() <<"x" << color_vec_2d.size() << ")" << std::endl;
+    std::cout <<"The 2D vector has "<< color_vec_2d[0].size()*color_vec_2d.size()<< " elements and has a size of (" << color_vec_2d.size() <<"x" << color_vec_2d[0].size() << ")" << std::endl;
     std::cout<<"The final 2D vector is: "<< std::endl;
     
     
