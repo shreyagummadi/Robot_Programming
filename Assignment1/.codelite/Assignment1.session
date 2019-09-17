@@ -2,7 +2,15 @@
 <Session Name="/home/ts/UMD/Cu_Ag_Au/Assignment1/Assignment1.workspace">
   <int Value="0" Name="m_selectedTab"/>
   <wxString Value="/home/ts/UMD/Cu_Ag_Au/Assignment1/Assignment1.workspace" Name="m_workspaceName"/>
-  <TabInfoArray Name="TabInfoArray"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/home/ts/UMD/Cu_Ag_Au/Assignment1/main.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="5" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
   <SerializedObject Name="m_breakpoints">
     <long Value="0" Name="Count"/>
   </SerializedObject>
