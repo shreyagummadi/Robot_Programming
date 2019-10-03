@@ -60,7 +60,7 @@ bool validate_points(int x, int y, std::vector<std::string> maze){
         std::cout<<"The point is on an obstacle."<<std::endl;
         return 0;
     }
-    else if (x<0 || x>31 || y<0 || y>46){
+    else if (x<0 || x>46 || y<0 || y>31){
         std::cout<<"The point is outside the maze."<<std::endl;
         return 0;
     }
