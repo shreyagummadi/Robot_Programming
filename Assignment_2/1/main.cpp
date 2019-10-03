@@ -48,7 +48,7 @@ int main(){
 
 
 bool validate_points(int x, int y, std::vector<std::string> maze){
-    if(maze[x][y]=='#'){
+    if(maze[y][x]=='#'){   //since y-rows and x-columns
         std::cout<<"The point is on an obstacle.";
         return 0;
     }
