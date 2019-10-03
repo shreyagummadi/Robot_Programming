@@ -27,14 +27,6 @@ int main(){
     else{
         std::cout<<"Unable to open file";
     }
-    //display the maze
-    for(int r=0; r<rows; r++){
-        for(int c=0;c<columns;c++){
-            // each element can be accessed by accessing the row and then the corresponding column
-            std::cout<<maze[r][c];
-        }
-           std::cout<<std::endl;
-    }
     
     int start_x, start_y;
     int goal_x,goal_y;
@@ -46,9 +38,19 @@ int main(){
         std::cout<<"Enter new start points: ";
         std::cin>>start_x>>start_y;
     }
+    maze[start_y][start_x]='S';
     while(validate_points(goal_x,goal_y,maze)==0){
         std::cout<<"Enter new goal points: "<<std::endl;
         std::cin>>goal_x>>goal_y;
+    }
+    maze[goal_y][goal_x]='G';
+    //display the maze
+    for(int r=0; r<rows; r++){
+        for(int c=0;c<columns;c++){
+            // each element can be accessed by accessing the row and then the corresponding column
+            std::cout<<maze[r][c];
+        }
+           std::cout<<std::endl;
     }
 }
 
