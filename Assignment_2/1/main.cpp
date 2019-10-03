@@ -8,8 +8,8 @@ bool validate_points(int x, int y, std::vector<std::string> maze);
 
 
 int main(){
-    int rows = 31;
-    int columns = 46;
+    int rows{0};
+    int columns{0};
     // read file
     std::ifstream myfile("/home/shreya/Desktop/Workspace/Assignment_2/maze.txt"); //customize this
     // reads from top so origin at top left corner
@@ -21,12 +21,15 @@ int main(){
         while (std::getline(myfile, file_line)) {
             // save each line as a row in the vector
             maze.push_back(file_line);
+            rows +=1;
         }
         myfile.close();
+        columns = maze.at(0).size();
     }
     else{
         std::cout<<"Unable to open file";
     }
+    
     
     int start_x, start_y;
     int goal_x,goal_y;
