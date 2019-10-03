@@ -42,18 +42,24 @@ int main(){
     std::cin>>start_x>>start_y;
     std::cout<<"Enter goal x and y coordinates: ";
     std::cin>>goal_x>>goal_y;
-    validate_points(start_x,start_y,maze);
-    validate_points(goal_x,goal_y,maze);
+    while (validate_points(start_x,start_y,maze)==0){
+        std::cout<<"Enter new start points: ";
+        std::cin>>start_x>>start_y;
+    }
+    while(validate_points(goal_x,goal_y,maze)==0){
+        std::cout<<"Enter new goal points: "<<std::endl;
+        std::cin>>goal_x>>goal_y;
+    }
 }
 
 
 bool validate_points(int x, int y, std::vector<std::string> maze){
-    if(maze[y][x]=='#'){   //since y-rows and x-columns
-        std::cout<<"The point is on an obstacle.";
+    if(maze[y][x]=='#'){  //y-rows, x-columns
+        std::cout<<"The point is on an obstacle."<<std::endl;
         return 0;
     }
     else if (x<0 || x>31 || y<0 || y>46){
-        std::cout<<"The point is outside the maze.";
+        std::cout<<"The point is outside the maze."<<std::endl;
         return 0;
     }
     return 1;
