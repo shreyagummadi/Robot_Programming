@@ -1,7 +1,7 @@
 
 /**
 * @file main.cpp
-* @author Raghav Agarwal <@umd.edu>
+* @author Raghav Agarwal <ragarwal@terpmail.umd.edu>
 * Diego Camargo <camargo1@terpmail.umd.edu>
 * Shreya Gummadi <shreyagummadi@gmail.com>
 * Revati Naik <revatin@umd.edu>
@@ -32,7 +32,7 @@
 * @brief A robot is asked to navigate a maze. It starts at a specific position in the maze (the starting position)
 and is asked to try to reach another position in the maze (the goal position).
 
-* @author Raghav Agarwal <@umd.edu>
+* @author Raghav Agarwal <ragarwal@terpmail.umd.edu>
 * Diego Camargo <camargo1@terpmail.umd.edu>
 * Shreya Gummadi <shreyagummadi@gmail.com>
 * Revati Naik <revatin@umd.edu>
