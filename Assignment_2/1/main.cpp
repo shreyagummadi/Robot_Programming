@@ -1,10 +1,55 @@
+
+/**
+* @file main.cpp
+* @author Raghav Agarwal <@umd.edu>
+* Diego Camargo <camargo1@terpmail.umd.edu>
+* Shreya Gummadi <shreyagummadi@gmail.com>
+* Revati Naik <revatin@umd.edu>
+* Akshitha Pothamshetty <apothams@terpmail.umd.edu>
+* Thomas Sullivan <Tsulliv5@umd.edu>
+* 
+* @version 1.0
+*
+* @section LICENSE
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation; either version 2 of
+* the License, or (at your option) any later version.
+*
+* @section DESCRIPTION
+*
+* This project is just used to ask a robot to naigate a maze.
+*/
+
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
- 
+
+/**
+* @brief A robot is asked to navigate a maze. It starts at a specific position in the maze (the starting position)
+and is asked to try to reach another position in the maze (the goal position).
+
+* @author Raghav Agarwal <@umd.edu>
+* Diego Camargo <camargo1@terpmail.umd.edu>
+* Shreya Gummadi <shreyagummadi@gmail.com>
+* Revati Naik <revatin@umd.edu>
+* Akshitha Pothamshetty <apothams@terpmail.umd.edu>
+* Thomas Sullivan <Tsulliv5@umd.edu>
+* @param starting position
+* @param goal position
+* @return \f$If no path is found, display a message ”Path not found” and display the
+maze with the partial path (from S to where it stopped).
+ \f$If a path is found, display the maze with the solution path (from S to G)\f$     
+*/
+
+
 bool validate_points(int x, int y, std::vector<std::string> maze);
 // takes in a point and the maze and checks if the point is in free space in the maze
+
+
 
 
 int main(){

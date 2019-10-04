@@ -6,16 +6,16 @@
 ProjectName            :=1
 ConfigurationName      :=Debug
 WorkspaceConfiguration := $(ConfigurationName)
-WorkspacePath          :=/home/shreya/Desktop/Workspace/Assignment_2
-ProjectPath            :=/home/shreya/Desktop/Workspace/Assignment_2/1
+WorkspacePath          :=/home/controls/ENPM809Y/Workspace/Assignment_2
+ProjectPath            :=/home/controls/ENPM809Y/Workspace/Assignment_2/1
 IntermediateDirectory  :=../build-$(ConfigurationName)/1
 OutDir                 :=../build-$(ConfigurationName)/1
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=shreya
-Date                   :=02/10/19
-CodeLitePath           :=/home/shreya/.codelite
+User                   :=controls
+Date                   :=04/10/19
+CodeLitePath           :=/home/controls/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
@@ -92,7 +92,7 @@ PreBuild:
 ## Objects
 ##
 ../build-$(ConfigurationName)/1/main.cpp$(ObjectSuffix): main.cpp ../build-$(ConfigurationName)/1/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/shreya/Desktop/Workspace/Assignment_2/1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/controls/ENPM809Y/Workspace/Assignment_2/1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/1/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/1/main.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/1/main.cpp$(DependSuffix) -MM main.cpp
 
