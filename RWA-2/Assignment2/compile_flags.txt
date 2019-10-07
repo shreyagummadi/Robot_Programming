@@ -6,4 +6,4 @@
 -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
--I/home/controls/ENPM809Y/Workspace/RWA-2/Assignment2
+-I/home/raghavagarwal/Desktop/Github_project/Cu_Ag_Au/RWA-2/Assignment2
