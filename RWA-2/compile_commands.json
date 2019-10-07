@@ -1,0 +1,5 @@
+[{
+  "file": "/home/ts/UMD/Assignment2/Assignment2/main.cpp",
+  "directory": "/home/ts/UMD/Assignment2/Assignment2",
+  "command": "clang  -c /home/ts/UMD/Assignment2/Assignment2/main.cpp -o /home/ts/UMD/Assignment2/Assignment2/main.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I.  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }]
