@@ -5,15 +5,15 @@
 ## Debug
 ProjectName            :=Assignment2
 ConfigurationName      :=Debug
-WorkspacePath          :=/home/ts/UMD/Assignment2
-ProjectPath            :=/home/ts/UMD/Assignment2/Assignment2
+WorkspacePath          :=/home/ts/UMD/Cu_Ag_Au/Assignment2_Sullivan
+ProjectPath            :=/home/ts/UMD/Cu_Ag_Au/Assignment2_Sullivan/Assignment2
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=TS
-Date                   :=04/10/19
+Date                   :=06/10/19
 CodeLitePath           :=/home/ts/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -92,7 +92,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ts/UMD/Assignment2/Assignment2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ts/UMD/Cu_Ag_Au/Assignment2_Sullivan/Assignment2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
