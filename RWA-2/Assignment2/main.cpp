@@ -44,7 +44,7 @@ std::vector<std::string> mazeVector;
 void ReadTextFile(){
     //read in maze.txt
     std::ifstream inFile;
-    std::string textFile = "maze.txt";
+    std::string textFile = "../maze.txt";
     inFile.open(textFile);
     //throw error if unable to open file
     if (!inFile) {
