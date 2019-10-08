@@ -202,6 +202,7 @@ int main()
     mazeVector[goal_y].at(goal_x) = 'G';
     mazeVector[start_y].at(start_x) = 'S';
     
+    
     //call FindPath() function to find a path in the maze from start position "S" to goal position "G"
     //if path can be found from start to finish then display maze
     if (FindPath(start_x, start_y)){
