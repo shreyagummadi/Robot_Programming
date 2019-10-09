@@ -40,16 +40,24 @@
 //create global variable that holds contents of maze.txt
 std::vector<std::string> mazeVector;
 
-
+void ReadTextFile();
 //Function to read maze text file and store it to the global string vector variable, mazeVector
+std::vector<int> GetCoordinates();
+//Function to get and test user entered start and goal coordinates
+void DisplayMaze();
+//Function that loops through, cleans up, and prints the contents of mazeVector to the console
+bool FindPath( int x, int y);
+//Function to recursively find an unobstructed path from the start postition to the goal position in the maze
+
+
 void ReadTextFile(){
     //read in maze.txt
     std::ifstream inFile;
-    std::string textFile = "../maze.txt";
+    std::string textFile = "../maze2.txt";
     inFile.open(textFile);
     //throw error if unable to open file
     if (!inFile) {
-        std::cout << "Unable to open file...make sure \"maze.txt\" is contained in debug folder" << std::endl;
+        std::cout << "Unable to open file...make sure \"maze2.txt\" is contained in debug folder" << std::endl;
         exit(1); // terminate with error
     }
     //if file can be opened then store each line of maze.txt to mazeVector
@@ -60,11 +68,11 @@ void ReadTextFile(){
         }
     }
     //close maze.txt
+//    std::cout<<mazeVector.size();
     inFile.close();
     return;
 }
 
-//Function to get and test user entered start and goal coordinates 
 std::vector<int> GetCoordinates(){
     //create variables to store user entered coordinates
     int start_x, start_y, goal_x, goal_y;
@@ -76,11 +84,11 @@ std::vector<int> GetCoordinates(){
         //stores user inputs to variables
         std::cin >> start_x >> start_y;
         //correct coordinates to match indices of mazeVector
-        start_y = 30 -start_y;
+        start_y = 5 -start_y;
         //if input is entered successfully test input formatting
         if(!std::cin.fail()){
             //check to see if start position is within the boundaries of the maze for a set maze size of 31 rows and 46 columns
-            if ( (start_x>45||start_x<0) || (start_y>30||start_y<0) ) {
+            if ( (start_x>5||start_x<0) || (start_y>5||start_y<0) ) {
             std::cout << "Starting coordinates out of maze boundary... try again" << std::endl;
             continue;
             }
@@ -107,11 +115,11 @@ std::vector<int> GetCoordinates(){
         std::cout << "Enter goal coordinates (e.g. goal_x goal_y):"<<std::endl;
         std::cin >> goal_x >> goal_y;
         //correct coordinates to match indices of mazeVector
-        goal_y = 30 - goal_y;
+        goal_y = 5 - goal_y;
         //if input is entered successfully test input formatting
         if(!std::cin.fail()){
             //check to see if goal position is within the boundaries of the maze for a set maze size of 31 rows and 46 columns
-            if ( (goal_x>45||goal_x<0) || (goal_y>30||goal_y<0) ) {
+            if ( (goal_x>5||goal_x<0) || (goal_y>5||goal_y<0) ) {
             std::cout << "Goal coordinates out of maze boundary... try again" << std::endl;
             continue;
             }
@@ -138,7 +146,6 @@ std::vector<int> GetCoordinates(){
     return coordinatesVector;
 }
 
-//Function that loops through, cleans up, and prints the contents of mazeVector to the console
 void DisplayMaze() {
     //loop through each string in mazeVector
     for (std::string line: mazeVector) {
@@ -156,10 +163,9 @@ void DisplayMaze() {
     return;
 }
 
-//Function to recursively find an unobstructed path from the start postition to the goal position in the maze
 bool FindPath( int x, int y) {
     //check to see whether the position is outside the boundaries of the maze, and if it is return false
-    if ( (x>45||x<0) || (y>30||y<0) ) {
+    if ( (x>5||x<0) || (y>5||y<0) ) {
         return false;
     } 
     //check to see if the position is the goal position marked by "G", and if so return true
@@ -179,7 +185,7 @@ bool FindPath( int x, int y) {
         return false;
     }
     //check to see if the position is empty, and if so mark it with a "+" symbol
-    if ( mazeVector[y].at(x) == ' ' ) {
+    if ( mazeVector[y].at(x) == '.' ) {
         mazeVector[y].at(x) = '+';
     }
     //Look/Go North-recursively call FindPath and send coordinates that are "north" of the current x,y position to check for a free path
