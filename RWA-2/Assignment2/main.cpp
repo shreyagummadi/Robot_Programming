@@ -153,7 +153,7 @@ void DisplayMaze() {
         std::size_t location = line.find('X');
         while( location != std::string::npos ) {
             // Replace this occurrence of X
-            line.replace(location, 1, " ");
+            line.replace(location, 1, ".");
             // Get the next occurrence of X from the current location
             location =line.find('X', location + 1);
         }
