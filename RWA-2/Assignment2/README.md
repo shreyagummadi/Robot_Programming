@@ -6,7 +6,11 @@ Project Statement
 ========
 This source code provides a framework to navigate a robot through a maze from a start point to a goal point. 
 
-It is currently hosted on GitHub at https://https://github.com/sully892/Cu_Ag_Au/tree/master/Assignment_2
+
+It is currently hosted on GitHub at 
+
+https://github.com/sully892/Cu_Ag_Au/tree/master/RWA-2
+
 
 Files
 ========
@@ -14,7 +18,8 @@ Files
 There is one file for this project:
 	group11-rwa2.zip
 To run the file, extract and open the workspace in any IDE and run the main.cpp file. 
-The zip file also contains a maze.txt file, make sure to that it is stored in the workspace for the code to run. Otherwise. specify the location address in the code.
+The zip file also contains a maze.txt file, make sure that it is stored in the workspace for the code to run. Otherwise specify the location address in the code.
+
 
 Overview
 ========
@@ -27,10 +32,11 @@ and is asked to try to reach another position in the maze (the goal position).
  * Positions are identified by (x, y) coordinates.
 
 
+
 Rules for the Robot
 -----
 
- * At any given moment, the robot can only move 1 step in one of 4 directions.
+ * At any given moment, the robot can only move 1 step in one of the 4 directions.
  * Valid moves are:
  	– Go North
 	– Go East
@@ -43,17 +49,20 @@ Rules for the Robot
 
 
 
+
 User inputs
 -----
 
-The start point and goal point can be given as: x_coordinate y_coordinate.
+The starting point and goal point can be given as: x_coordinate y_coordinate.
 Ex: start point: 29 1   goal point: 32 13
+
 
 
 Implementation
 -----
 
-The algorithm makes use of a recursive function to move the robot from one node to the next. It first checks north, then east, south and finally west. 
+The algorithm makes use of a recursive function to move the robot from one node to the next. It first checks north, then east, south and west. 
+
 
 
 
@@ -82,6 +91,7 @@ The maze used in the assignment has a predefined size and a predefined design. T
 
 
 
+
 Representation
 -----
 
@@ -94,6 +104,7 @@ Representation
 4. The character S is the start position of the robot.
 5. The character G is the goal position the robot must reach (if a valid path is available).
 6. A solution or partial path in the maze can be marked by the + symbol.
+
 
 Algorithm
 -----
@@ -111,7 +122,7 @@ Remember that a recursive algorithm has at least two parts:
             2. FindPath(x2,y2);//--(x2,y2):east coordinates of (x,y)
             3. FindPath(x3,y3);//--(x3,y3):south coordinates of (x,y)
             4. FindPath(x4,y4);//--(x4,y4):west coordinates of (x,y)
-            
+     
 
 Base Case
 -----
@@ -122,6 +133,7 @@ the maze.
 	– The algorithm stops when the goal is reached.
 	– FindPath returns false if the computed position is outside the boundaries of the maze.
 	– FindPath returns false if the computed position is an obstacle.
+
 
 
 

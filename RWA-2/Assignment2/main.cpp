@@ -51,6 +51,14 @@ bool FindPath( int x, int y);
 
 
 void ReadTextFile(){
+    
+/**
+* @brief Program read maze.txt file
+* @param grid_x-axis
+* @param grid_y-axis
+* @param obstacles
+*/
+
     //read in maze.txt
     std::ifstream inFile;
     std::string textFile = "../maze.txt";
@@ -76,6 +84,15 @@ void ReadTextFile(){
 std::vector<int> GetCoordinates(){
     //create variables to store user entered coordinates
     int start_x, start_y, goal_x, goal_y;
+    
+
+/**
+* @brief promoting the user to input starting coordinates
+* @param start_x
+* @param start_y
+*/
+
+
     
     bool startBad = true;
     do {
@@ -146,6 +163,11 @@ std::vector<int> GetCoordinates(){
     return coordinatesVector;
 }
 
+/**
+ * @brief A function to display maze
+ */
+
+
 void DisplayMaze() {
     //loop through each string in mazeVector
     for (std::string line: mazeVector) {
@@ -162,6 +184,13 @@ void DisplayMaze() {
     }
     return;
 }
+
+/**
+ * @brief A function to chech whether or not the position is outside the boundries of the maze.
+ * @param x
+ * @param y
+ * @return Result whether the position is outside the boundary of the maze or not.
+ */
 
 bool FindPath( int x, int y) {
     //check to see whether the position is outside the boundaries of the maze, and if it is return false
