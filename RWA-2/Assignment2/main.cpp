@@ -29,11 +29,6 @@
 /**
 * @brief A robot is asked to navigate a maze. It starts at a specific position in the maze (the starting position)and is asked to try to reach another position in the maze (the goal position).
 * @author Raghav Agarwal <ragarwal@terpmail.umd.edu> Diego Camargo <camargo1@terpmail.umd.edu> Shreya Gummadi <shreyagummadi@gmail.com> Revati Naik <revatin@umd.edu> Akshitha Pothamshetty <apothams@terpmail.umd.edu> Thomas Sullivan <Tsulliv5@umd.edu>
-* @param start_x starting position x-coordinate
-* @param start_y starting position y-coordinate
-* @param goal_x goal position x-coordinate
-* @param goal_y goal position y-coordinate
-* @return \f$DisplayMaze\f$  //If no path is found, display a message ”Path not found” and display the maze with the partial path (from S to where it stopped).if a path is found, display the maze with the solution path (from S to G)
 */
 
 
@@ -53,10 +48,8 @@ bool FindPath( int x, int y);
 void ReadTextFile(){
     
 /**
-* @brief Program read maze.txt file
-* @param grid_x-axis
-* @param grid_y-axis
-* @param obstacles
+* @brief Program read maze.txt file and throw error if unable to open the file
+* @return return the string vector (mazeVector) that has all lines in maze.txt stored in it
 */
 
     //read in maze.txt
@@ -81,18 +74,15 @@ void ReadTextFile(){
     return;
 }
 
+
+/**
+* @brief prompt the user to input starting coordinates and verifies that user entered data is formatted appropriately
+* @return vector of integers containing the start and goal coordinates
+*/
+
 std::vector<int> GetCoordinates(){
     //create variables to store user entered coordinates
     int start_x, start_y, goal_x, goal_y;
-    
-
-/**
-* @brief promoting the user to input starting coordinates
-* @param start_x
-* @param start_y
-*/
-
-
     
     bool startBad = true;
     do {
@@ -186,10 +176,10 @@ void DisplayMaze() {
 }
 
 /**
- * @brief A function to chech whether or not the position is outside the boundries of the maze.
+ * @brief A Function that recursively finds an unobstructed path from the start position to the goal position in the maze
  * @param x
  * @param y
- * @return Result whether the position is outside the boundary of the maze or not.
+ * @return true or false
  */
 
 bool FindPath( int x, int y) {
