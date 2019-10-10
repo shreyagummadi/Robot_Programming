@@ -176,11 +176,12 @@ void DisplayMaze() {
 }
 
 /**
- * @brief A Function that recursively finds an unobstructed path from the start position to the goal position in the maze
+ * @brief recursive function to move the robot north, east, south or west respectively.
  * @param x
  * @param y
- * @return true or false
+ * @return path from start to goal point
  */
+
 
 bool FindPath( int x, int y) {
     //check to see whether the position is outside the boundaries of the maze, and if it is return false
