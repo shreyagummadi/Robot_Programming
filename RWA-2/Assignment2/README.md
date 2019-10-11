@@ -85,7 +85,7 @@ Definition of Maze
 -----
 
 
-![The Maze](/home/controls/ENPM809Y/Workspace/RWA-2/Assignment2/Documentation/TheMaze.png?raw=true)
+![The Maze](TheMaze.PNG?raw=true)
 
 The maze used in the assignment has a predefined size and a predefined design. The maze is represented by a matrix of characters, as depicted below, and can be found in the text file
 (maze.txt).
