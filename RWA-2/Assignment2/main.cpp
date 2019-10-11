@@ -179,7 +179,7 @@ void DisplayMaze() {
  * @brief recursive function to move the robot north, east, south or west respectively.
  * @param x
  * @param y
- * @return path from start to goal point
+ * @return true or false 
  */
 
 

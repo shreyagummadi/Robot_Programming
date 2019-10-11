@@ -66,7 +66,7 @@ The algorithm makes use of a recursive function to move the robot from one node 
 
 
 
-The program has 3 helper functions
+The program has 4 helper functions
 -----
 
 1. ReadTextFile(): This function takes the maze.txt file, reads it and stores its content into a vector. 
@@ -75,9 +75,10 @@ The program has 3 helper functions
 
 3. DisplayMaze(): This function displays the entire maze. 
 
- * The main function is:
-		FindPath(): This is a recursive function which takes points as its input and checks to see if the robot can move north, east, south or west respectively. It also ensures that the point is within the maze. The function stops when the point is equal to the goal point.
+4. FindPath(): This is a recursive function which takes points as its input and checks to see if the robot can move north, east, south or west respectively. It also ensures that the point is within the maze. The function stops when the point is equal to the goal point.
 	
+
+The main function for this program calls ReadTextFile(), GetCoordinates(), FindPath(), and DisplayMaze() in order to accomplish the project objective.
 
 
 Definition of Maze
