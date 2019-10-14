@@ -5,16 +5,17 @@
 ## Debug
 ProjectName            :=Assignment2
 ConfigurationName      :=Debug
-WorkspacePath          :=/home/ts/UMD/Cu_Ag_Au/RWA-2
-ProjectPath            :=/home/ts/UMD/Cu_Ag_Au/RWA-2/Assignment2
-IntermediateDirectory  :=./Debug
-OutDir                 := $(IntermediateDirectory)
+WorkspaceConfiguration := $(ConfigurationName)
+WorkspacePath          :=/home/controls/ENPM809Y/Workspace/RWA-2
+ProjectPath            :=/home/controls/ENPM809Y/Workspace/RWA-2/Assignment2
+IntermediateDirectory  :=../build-$(ConfigurationName)/Assignment2
+OutDir                 :=../build-$(ConfigurationName)/Assignment2
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=TS
-Date                   :=10/10/19
-CodeLitePath           :=/home/ts/.codelite
+User                   :=controls
+Date                   :=14/10/19
+CodeLitePath           :=/home/controls/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
 ObjectSuffix           :=.o
@@ -27,14 +28,13 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
+OutputFile             :=../build-$(ConfigurationName)/bin/$(ProjectName)
 Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
-ObjectsFileList        :="Assignment2.txt"
+ObjectsFileList        :=$(IntermediateDirectory)/ObjectsList.txt
 PCHCompileFlags        :=
-MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/Assignment2/main.cpp$(ObjectSuffix) 
 
 
 
@@ -70,20 +70,20 @@ Objects=$(Objects0)
 ## Main Build Targets 
 ##
 .PHONY: all clean PreBuild PrePreBuild PostBuild MakeIntermediateDirs
-all: $(OutputFile)
+all: MakeIntermediateDirs $(OutputFile)
 
-$(OutputFile): $(IntermediateDirectory)/.d $(Objects) 
-	@$(MakeDirCommand) $(@D)
+$(OutputFile): ../build-$(ConfigurationName)/Assignment2/.d $(Objects) 
+	@mkdir -p "../build-$(ConfigurationName)/Assignment2"
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
 
 MakeIntermediateDirs:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+	@mkdir -p "../build-$(ConfigurationName)/Assignment2"
+	@mkdir -p ""../build-$(ConfigurationName)/bin""
 
-
-$(IntermediateDirectory)/.d:
-	@test -d ./Debug || $(MakeDirCommand) ./Debug
+../build-$(ConfigurationName)/Assignment2/.d:
+	@mkdir -p "../build-$(ConfigurationName)/Assignment2"
 
 PreBuild:
 
@@ -91,20 +91,20 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/ts/UMD/Cu_Ag_Au/RWA-2/Assignment2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
+../build-$(ConfigurationName)/Assignment2/main.cpp$(ObjectSuffix): main.cpp ../build-$(ConfigurationName)/Assignment2/main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/controls/ENPM809Y/Workspace/RWA-2/Assignment2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/Assignment2/main.cpp$(DependSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Assignment2/main.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/Assignment2/main.cpp$(DependSuffix) -MM main.cpp
 
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+../build-$(ConfigurationName)/Assignment2/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Assignment2/main.cpp$(PreprocessSuffix) main.cpp
 
 
--include $(IntermediateDirectory)/*$(DependSuffix)
+-include ../build-$(ConfigurationName)/Assignment2//*$(DependSuffix)
 ##
 ## Clean
 ##
 clean:
-	$(RM) -r ./Debug/
+	$(RM) -r $(IntermediateDirectory)
 
 
