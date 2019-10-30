@@ -1,0 +1,52 @@
+Group11-RWA3
+
+Check Points:
+		
+*Class LandBasedRobot
+	-base class
+	-namespace rwa3
+	-abstract
+		*.h file
+			-method prototype/public
+			-atributes/protected
+			-define constructor prototype with default parameter values/public
+			-destructor/public
+			-accessors/public/const
+			-mutators/public/void
+		*.cpp file
+			-method definition (output only function being called)
+			-constructor implementation
+
+*Class LandBasedWheeled
+	-derived from base class (single and public inheritance)
+	-namespace rwa3
+	-concrete
+	
+		*.h file
+			-method prototype/public
+				*dynamic binding
+					-virtual and override
+			-atributes/protected
+			-copy constructor from base class (deep copy constructor???)
+		*.cpp file
+			-method definition (output only function being called)
+
+*Class LandBasedTracked
+	-derived from base class (single and public inheritance)
+	-namespace rwa3
+	-concrete
+		*.h file
+			-method prototype/public
+				*dynamic binding
+					-virtual and override
+			-atributes/protected
+			-copy constructor from base class (deep copy constructor???)
+		*.cpp file
+			-method definition (output only function being called)
+
+*use UML tools to create a class diagram (https://circle.visual-paradigm.com/)
+
+
+
+
+
