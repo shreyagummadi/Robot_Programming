@@ -1,5 +1,5 @@
 ENPM 809Y: Introduction to Robot Programming
-Assignment 2: Recursive Function
+Assignment 3: OOP, Inheritance, and Polymorphism
 Group 11
 
 
@@ -12,7 +12,7 @@ To navigate a robot through a maze from a start point to a goal point.
 
 There is one file for this project:
 	
-	-group11-rwa2.zip
+	-group11-rwa3.zip
 
 
 *User inputs:
