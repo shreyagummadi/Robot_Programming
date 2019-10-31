@@ -1,5 +1,5 @@
 # ENPM809Y_Group11: Introduction to Robot Programming 
-# Assignment 2: Recursive Function
+# Assignment 3: OOP, Inheritance, and Polymorphism
 
 
 Project Statement
@@ -11,7 +11,7 @@ Files
 ========
  
 There is one file for this project:
-	group11-rwa2.zip
+	group11-rwa3.zip
 
 To run the file:
 ========
