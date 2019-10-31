@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mazevector',['mazeVector',['../main_8cpp.html#a25453b3a478aa8358b1023d556093910',1,'main.cpp']]]
+  ['followactionpath',['FollowActionPath',['../main_8cpp.html#ae60ecf564da83c33582ae9d620848e4e',1,'main.cpp']]]
 ];

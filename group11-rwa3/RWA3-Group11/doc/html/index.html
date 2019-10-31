@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Group11-Assignment2: ENPM809Y_Group11: Introduction to Robot Programming</title>
+<title>Group11-Assignment3: ENPM809Y_Group11: Introduction to Robot Programming</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -35,10 +35,10 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="logo.gif"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Group11-Assignment2
+   <div id="projectname">Group11-Assignment3
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">A robot is asked to navigate a maze</div>
+   <div id="projectbrief">Develop the structure of two robots navigating and picking up object in a maze, using object-oriented-programming, inheritance and polymorphism</div>
   </td>
  </tr>
  </tbody>
@@ -92,13 +92,24 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">ENPM809Y_Group11: Introduction to Robot Programming </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Assignment 2: Recursive Function</h1>
+<div class="textblock"><h1>Assignment 3: OOP, Inheritance, and Polymorphism</h1>
 <h1>Project Statement </h1>
 <p>This source code provides a framework to navigate a robot through a maze from a start point to a goal point.</p>
-<p>It is currently hosted on GitHub at <a href="https://https://github.com/sully892/Cu_Ag_Au/tree/master/Assignment_2">https://https://github.com/sully892/Cu_Ag_Au/tree/master/Assignment_2</a></p>
 <h1>Files </h1>
-<p>There is one file for this project: group11-rwa2.zip To run the file, extract and open the workspace in any IDE and run the <a class="el" href="main_8cpp.html">main.cpp</a> file. The zip file also contains a maze.txt file, make sure to that it is stored in the workspace for the code to run. Otherwise. specify the location address in the code.</p>
-<h1>Overview </h1>
+<p>There is one file for this project: group11-rwa3.zip</p>
+<h1>To run the file: </h1>
+<pre class="fragment">-Step 1: Extract and open the workspace in any IDE, then build and run the main.cpp file. 
+    ~The zip file also contains a maze.txt file, make sure to that it is stored in the workspace for the code to run. Otherwise. specify the location address in the code.
+
+-Step 2: Enter starting coordinates (e.g. start_x start_y)
+    ~If user enter something other than an integer, the program will reprompt step 2.
+
+-Step 3: Enter goal coordinates (e.g. goal_x goal_y)
+    ~If user enter something other than an integer, the program will reprompt step 3.
+
+-Step 4: If the choosen coordinates fall at an empty space and inside the maze, the program will output graphycally the solution path.
+    ~If the choosem coordinates fall at an wall or outside the maze, the program will output out of range error
+</pre><h1>Overview </h1>
 <ul>
 <li>A robot is asked to navigate a maze. It starts at a specific position in the maze (the starting position) and is asked to try to reach another position in the maze (the goal position).</li>
 <li>Positions in the maze will either be open or blocked with an obstacle.</li>
@@ -106,43 +117,56 @@ $(document).ready(function(){initNavTree('index.html','');});
 </ul>
 <h2>Rules for the Robot </h2>
 <ul>
-<li>At any given moment, the robot can only move 1 step in one of 4 directions.</li>
-<li>Valid moves are: – Go North – Go East – Go South – Go West</li>
-<li>The robot can only move to positions without obstacles and must stay within the maze.</li>
-<li>The robot should search for a path from the start position to the goal position (a solution path) until it finds one or until it exhausts all possibilities.</li>
-<li>In addition, it should mark the path it finds (if any) in the maze.</li>
+<li>Robot can only move 1 step in one of the 4 directions.</li>
+<li>Valid moves are: – Move North – Move East – Move South – Move West</li>
+<li>Robot can only move to positions without obstacles</li>
+<li>Robot must stay within the maze</li>
+<li>Robot should search for a path from the start position to the goal position, until it exhausts all possibilities.</li>
+<li>Robot should mark the path it finds in the maze (if possible)</li>
 </ul>
-<h2>User inputs </h2>
-<p>The start point and goal point can be given as: x_coordinate y_coordinate. Ex: start point: 29 1 goal point: 32 13</p>
+<h2>User Inputs </h2>
+<p>The starting point and goal point can be given as: x_coordinate y_coordinate. Ex: start point: 29 1 goal point: 32 13</p>
+<h2>Program Output </h2>
+<ul>
+<li>If path is not found diplay "Path not found" and display partial path at the end</li>
+<li>If path is found diplay solution path at the end</li>
+<li>Re-promt user if invalid enter</li>
+</ul>
 <h2>Implementation </h2>
-<p>The algorithm makes use of a recursive function to move the robot from one node to the next. It first checks north, then east, south and finally west.</p>
-<h2>The program has 3 helper functions </h2>
+<p>The algorithm makes use of a recursive function to move the robot from one node to the next. It first checks north, then east, south and west.</p>
+<h2>The program has four helper functions </h2>
+<p>The main function for this program calls ReadTextFile(), GetCoordinates(), FindPath(), and DisplayMaze() in order to accomplish the project objective:</p>
 <ol type="1">
 <li>ReadTextFile(): This function takes the maze.txt file, reads it and stores its content into a vector.</li>
 <li>GetCoordinates(): This function takes user input for the start and goal points and stores it into a vector. The function also makes sure that the given inputs are within the free space in the maze and are integers.</li>
-<li>DisplayMaze(): This function displays the entire maze.<ul>
-<li>The main function is: FindPath(): This is a recursive function which takes points as its input and checks to see if the robot can move north, east, south or west respectively. It also ensures that the point is within the maze. The function stops when the point is equal to the goal point.</li>
-</ul>
-</li>
+<li>FindPath(): This is a recursive function called by main to find an unobstructed path from the starting position to the goal position. The function takes points as its input and checks to see if the robot can move north, east, south or west respectively. It also ensures that the point is within the maze. The function stops when the point is equal to the goal point.</li>
+<li>DisplayMaze(): This function displays the entire maze.</li>
 </ol>
 <h2>Definition of Maze </h2>
+<p>The maze used has a predefined size and a predefined design. The maze is represented by a matrix of characters, and can be found in the text file (maze.txt).</p>
 <div class="image">
 <img src="/home/controls/ENPM809Y/Workspace/RWA-2/Assignment2/Documentation/TheMaze.png?raw=true" alt="The Maze"/>
 </div>
-<p>The maze used in the assignment has a predefined size and a predefined design. The maze is represented by a matrix of characters, as depicted below, and can be found in the text file (maze.txt).</p>
 <h2>Representation </h2>
 <ol type="1">
-<li>Coordinates for the maze are represented in the Cartesian coordinate system. – The character S is positioned at (29, 1). – The character G is positioned at (32, 13).</li>
-<li>The ASCII character # represents a wall (forbidden position for the robot).</li>
-<li>Empty characters represent a position where the robot can be.</li>
-<li>The character S is the start position of the robot.</li>
-<li>The character G is the goal position the robot must reach (if a valid path is available).</li>
-<li>A solution or partial path in the maze can be marked by the + symbol.</li>
+<li><p class="startli">Coordinates are represented in the Cartesian coordinate system.</p>
+<p class="startli">– The character S is Start positioned</p>
+<p class="startli">– The character G is the Goal positioned</p>
+</li>
+<li>The ASCII character # represents a wall</li>
+<li>Empty characters represent an open position allow to the robot</li>
+<li>A solution or partial path in the maze is marked by the "+" symbol.</li>
 </ol>
 <h2>Algorithm </h2>
-<p>This problem must be solved (finding and marking a solution) with recursion. Remember that a recursive algorithm has at least two parts:</p><ul>
-<li>Base case(s) that determine when to stop.</li>
-<li>Recursive part that calls the same function (i.e., itself) to assist in solving the problem. <pre class="fragment"> • From the start position S, move in one of the four directions (North, East,South, West).
+<p>Problem solve use finding and marking a solution with recursion algorithm:</p>
+<ul>
+<li>Base case(s) that determine when to stop. <pre class="fragment"> * Determine when FindPath must stop.
+ * The recursive part of the algorithm stops when any of the following statement are made:
+     – When the goal is reached.
+     – FindPath returns false if the computed position is outside the boundaries of the maze.
+     – FindPath returns false if the computed position is an obstacle.
+</pre></li>
+<li>Recursive part that calls the same function (i.e., itself) to help solving the problem. <pre class="fragment"> • From the start position S, move in one of the four directions (North, East,South, West).
  • From the new position, move into one of the four directions.
  • Repeat this behavior until one of the base cases is reached.
  • The prototype of the recursive function is: bool FindPath(int x, int y);
@@ -151,13 +175,8 @@ $(document).ready(function(){initNavTree('index.html','');});
      2. FindPath(x2,y2);//--(x2,y2):east coordinates of (x,y)
      3. FindPath(x3,y3);//--(x3,y3):south coordinates of (x,y)
      4. FindPath(x4,y4);//--(x4,y4):west coordinates of (x,y)
-</pre></li>
-</ul>
-<h2>Base Case </h2>
-<ul>
-<li>It is not enough to know how to use FindPath recursively to advance through the maze.</li>
-<li>We also need to determine when FindPath must stop.</li>
-<li>The algorithm stops when any of the following conditions is encountered: – The algorithm stops when the goal is reached. – FindPath returns false if the computed position is outside the boundaries of the maze. – FindPath returns false if the computed position is an obstacle. </li>
+ • Backtracking
+     – Provides the avility to go back to previous position when encounter a wall or when the robot goes out of bounce the maze. The way it work is by moving to one of the valid moves and check if the new location is a wall or out of reach. if that condition is made, the robot will go back to the previous posiion, and repeat the process.</pre> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

@@ -7,7 +7,7 @@ Check Points:
 	-namespace rwa3
 	-abstract
 		*.h file
-			-method prototype/public
+			-method prototype/public/one pure virtual method?
 			-atributes/protected
 			-define constructor prototype with default parameter values/public
 			-destructor/public
@@ -45,6 +45,7 @@ Check Points:
 			-method definition (output only function being called)
 
 *use UML tools to create a class diagram (https://circle.visual-paradigm.com/)
+
 
 
 
