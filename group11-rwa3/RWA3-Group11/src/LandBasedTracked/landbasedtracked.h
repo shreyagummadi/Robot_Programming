@@ -3,7 +3,7 @@
 
 namespace rwa3{
 
-class LandBasedTracked{
+class LandBasedTracked : public LandBasedRobot{
 
 //    public:
 //    LandBasedTracked();
