@@ -1,0 +1,29 @@
+[{
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedRobot/landbasedrobot.h",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedRobot/landbasedrobot.h -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedRobot/landbasedrobot.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedTracked/landbasedtracked.cpp",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedTracked/landbasedtracked.cpp -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedTracked/landbasedtracked.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/main.cpp",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/main.cpp -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/main.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedTracked/landbasedtracked.h",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedTracked/landbasedtracked.h -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedTracked/landbasedtracked.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedWheeled/landbasedwheeled.cpp",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedWheeled/landbasedwheeled.cpp -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedWheeled/landbasedwheeled.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedWheeled/landbasedwheeled.h",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedWheeled/landbasedwheeled.h -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedWheeled/landbasedwheeled.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedRobot/landbasedrobot.cpp",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedRobot/landbasedrobot.cpp -o /home/ts/UMD/Cu_Ag_Au/group11-rwa3/RWA3-Group11/src/LandBasedRobot/landbasedrobot.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++17  -Wall  -g  -O0  -Wall"
+ }]
