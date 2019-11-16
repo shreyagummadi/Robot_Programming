@@ -22,15 +22,15 @@ class LandBasedWheeled : public LandBasedRobot{
 */
 
     //---Derived class constructor initialize---
-    	LandBasedWheeled(std::string name{"Anonymous Wheeled Robot"}, int x{0}, int y{0}, double speed{1.0}, double width{1.0}, double length{1.0}, height{1.0}, double capacity{1.0}, char direction{'N'});
+    	LandBasedWheeled(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction);
 
     //---Derived Class Copy Constructor---
     	LandBasedWheeled(const LandBasedWheeled &source);
 
     //---Derived Class Destructor---
     	virtual ~LandBasedWheeled(){
-        std::cout << "LandBasedWheeled::~LandBasedWheeled() Derived Class Destructor is called" << std::endl;
-//        delete wheel_type;//free allocated space on the heap created by new
+//            std::cout << "LandBasedWheeled::~LandBasedWheeled() Derived Class Destructor is called" << std::endl;
+//            delete wheel_type;//free allocated space on the heap created by new
     }
 
 /**

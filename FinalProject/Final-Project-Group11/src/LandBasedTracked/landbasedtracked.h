@@ -22,8 +22,7 @@ class LandBasedTracked : public LandBasedRobot{
 */
 
     //---Derived class constructor initialize---
-        LandBasedTracked(std::string name{"Anonymous Tracked Robot"}, int x{0}, int y{0}, double speed{1.0}, double width{1.0}, double length{1.0}, height{1.0}, double capacity{1.0}, char direction{'N'})
-        : LandBasedRobot(name, x, y, speed, width, length, height, capacity, direction);
+        LandBasedTracked(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction);
 
     //---Derived Class Copy Constructor initialize---
         LandBasedTracked(const LandBasedTracked &source);

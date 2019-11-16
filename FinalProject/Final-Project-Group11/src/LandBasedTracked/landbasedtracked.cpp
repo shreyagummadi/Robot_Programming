@@ -6,7 +6,7 @@
 // Get the direction of the robot in the maze
 char fp::LandBasedTracked::GetDirection(){
     std::cout << "LandBasedTracked::GetDirection is called\n";
-    return fp::LandBasedRobot::get_direction();
+    return LandBasedRobot::get_direction();
 }
 
 // Move the robot forward in the maze
@@ -27,8 +27,8 @@ void fp::LandBasedTracked::TurnRight(){
 
 //----Derived class constructor definition----
 
-fp::LandBasedTracked::LandBasedTracked(std::string name, int x, int y)
-    : LandBasedRobot(name, x, y){
+fp::LandBasedTracked::LandBasedTracked(std::string name="Anonymous Tracked Robot", int x=0, int y=0, double speed=1.0, double width=1.0, double length=1.0,double height=1.0, double capacity=1.0, char direction='N')
+    : LandBasedRobot(name, x, y, speed, width, length, height, capacity, direction){
 //        std::cout << "LandBasedTracked()::LandBasedTacked() Derived class constructor is called" << std::endl;
 //        track_type = new std::string;//dynamically allocate space on the heap for std::string data type
 //        *track_type = "";//initialize pointer

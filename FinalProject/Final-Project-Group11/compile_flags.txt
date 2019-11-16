@@ -6,7 +6,7 @@
 -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
--I/home/ts/UMD/Workspace/FinalProject/Final-Project-Group11
--I/home/ts/UMD/Workspace/FinalProject/Final-Project-Group11/src/LandBasedRobot
--I/home/ts/UMD/Workspace/FinalProject/Final-Project-Group11/src/LandBasedTracked
--I/home/ts/UMD/Workspace/FinalProject/Final-Project-Group11/src/LandBasedWheeled
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedRobot
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled

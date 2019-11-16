@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-
+#include <iostream>
 
 namespace fp{
     
@@ -21,7 +21,7 @@ class LandBasedRobot{
 */
 
     //---constructor initialize---
-        LandBasedRobot(std::string name, int x, int y, double speed, double width, double length, height, double capacity, char direction);
+        LandBasedRobot(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction);
 
     
     //---Copy Constructor initialize---
@@ -122,13 +122,13 @@ class LandBasedRobot{
  */
 
         std::string name_;// Name of the robot.
+        int x_;// X coordinate of the robot in the maze.
+        int y_;// Y coordinate of the robot in the maze.
         double speed_;// Driving speed of the robot.
         double width_;// Width of the base of the robot.
         double length_;// Length of the base of the robot.
         double height_;// Height of the base of the robot.
         double capacity_;// Payload of the arm.
-        int x_;// X coordinate of the robot in the maze.
-        int y_;// Y coordinate of the robot in the maze.
         char direction_;// Direction that the robot is facing in the maze. The diﬀerent possibilities are 'N' (north), 'E' (east), 'W' (west), 'S' (south).
 
 
