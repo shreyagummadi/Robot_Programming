@@ -35,6 +35,32 @@
 
 
 int main(){
-    
+    fp::LandBasedRobot *wheeled = new fp::LandBasedWheeled("Husky");
+    std::cout << wheeled->GetDirection() << std::endl;
+    std::cout << wheeled->get_name() << std::endl;
+    std::cout << wheeled->get_x() << std::endl;
+    std::cout << wheeled->get_y() << std::endl;
+    wheeled->MoveForward();
+    std::cout << wheeled->get_x() << std::endl;
+    std::cout << wheeled->get_y() << std::endl;
+    wheeled->TurnLeft();
+    std::cout << wheeled->GetDirection() << std::endl;
+    wheeled->TurnLeft();
+    std::cout << wheeled->GetDirection() << std::endl;
+    std::cout << wheeled->get_x() << std::endl;
+    std::cout << wheeled->get_y() << std::endl;
+    wheeled->MoveForward();
+    std::cout << wheeled->get_x() << std::endl;
+    std::cout << wheeled->get_y() << std::endl;
+    wheeled->TurnLeft();
+    std::cout << wheeled->GetDirection() << std::endl;
+    std::cout << wheeled->get_x() << std::endl;
+    std::cout << wheeled->get_y() << std::endl;
+    wheeled->MoveForward();
+    std::cout << wheeled->get_x() << std::endl;
+    std::cout << wheeled->get_y() << std::endl;
+    wheeled->TurnRight();
+    std::cout << wheeled->GetDirection() << std::endl;
+    delete wheeled;
     return 0;
 }

@@ -30,7 +30,7 @@ class LandBasedRobot{
     
     //---Destructor---	
     	virtual ~LandBasedRobot(){
-//        std::cout << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
+        std::cout << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
     }
 
 /**
@@ -53,6 +53,9 @@ class LandBasedRobot{
 */
 
     //---accessors---
+        std::string get_name() const{
+            return name_;
+        }
         int get_x() const{
             return x_;
         }
@@ -79,6 +82,9 @@ class LandBasedRobot{
         }
         
     //---mutators---
+        void set_name(std::string name){
+            name_= name;
+        }
         void set_x(int x){
             x_= x;
         }
