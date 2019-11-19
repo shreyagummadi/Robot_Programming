@@ -8,6 +8,16 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="History">
+      <File Name="src/History/history.cpp"/>
+      <File Name="src/History/history.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Heap">
+      <File Name="src/Heap/heap.cpp"/>
+      <File Name="src/Heap/heap.h"/>
+    </VirtualDirectory>
+    <File Name="src/Direction.h"/>
+    <File Name="src/Byte.h"/>
     <VirtualDirectory Name="Maze">
       <File Name="src/Maze/maze.cpp"/>
       <File Name="src/Maze/maze.h"/>

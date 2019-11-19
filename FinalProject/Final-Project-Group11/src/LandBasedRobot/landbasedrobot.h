@@ -6,18 +6,16 @@ namespace fp{
     
 /**
 * @brief Class LandBasedRobot is the base class which is an abstract type
-* @return return the only the methods that are being called by the derived classes.
+* @return returns only the methods that are being called by the derived classes.
 */
     
 class LandBasedRobot{
 
-// attributes, methods, constructor/destructors, and accessors and mutators
     public:
-//----constructor & destructor----
 
 /**
-* @brief Costructors and destructor in class LandBasedRobot are public, and are used to make other obects from derived classes
-* @return return the attribute from other classes
+* @brief Constructors and destructor in class LandBasedRobot are public, and are used to make other obects from derived classes
+* @return
 */
 
     //---constructor initialize---
@@ -35,7 +33,7 @@ class LandBasedRobot{
 
 /**
 * @brief Methods are public and virtual in class LandBasedRobot, and work like functions.
-* @return return the function being called by the derived class.
+* @return return the function being called by the derived class which overrides them.
 */
 
 //----Methods Prototypes----
