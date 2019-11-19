@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="/home/ts/UMD/Cu_Ag_Au/FinalProject/FinalProject.workspace">
-  <int Value="1" Name="m_selectedTab"/>
+  <int Value="2" Name="m_selectedTab"/>
   <wxString Value="/home/ts/UMD/Cu_Ag_Au/FinalProject/FinalProject.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
@@ -12,15 +12,22 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/api.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="27" Name="FirstVisibleLine"/>
       <int Value="29" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
-      <wxString Value="/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/api.cpp" Name="FileName"/>
-      <int Value="76" Name="FirstVisibleLine"/>
-      <int Value="84" Name="CurrentLine"/>
+      <wxString Value="/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Maze/maze.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="8" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Maze/maze.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="10" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

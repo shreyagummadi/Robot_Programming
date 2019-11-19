@@ -1,13 +1,15 @@
 #pragma once
+#include "landbasedtracked.h"
+#include "landbasedwheeled.h"
+#include <memory>
 
-namespace fp
-{
+namespace fp{
 
-class Algorithm
-{
+class Algorithm{
 public:
     Algorithm();
     virtual ~Algorithm();
+    void Solve(std::shared_ptr<fp::LandBasedRobot> robot);
 
 };
 

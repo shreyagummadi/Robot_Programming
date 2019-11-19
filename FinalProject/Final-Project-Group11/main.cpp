@@ -22,6 +22,8 @@
 * object in a maze, using object-oriented-programming, inheritance and polymorphism.
 */
 
+#include <memory>
+#include "../Algorithm/algorithm.h"
 #include "landbasedwheeled.h"
 #include "landbasedtracked.h"
 #include <vector>
@@ -35,32 +37,8 @@
 
 
 int main(){
-    fp::LandBasedRobot *wheeled = new fp::LandBasedWheeled("Husky");
-    std::cout << wheeled->GetDirection() << std::endl;
-    std::cout << wheeled->get_name() << std::endl;
-    std::cout << wheeled->get_x() << std::endl;
-    std::cout << wheeled->get_y() << std::endl;
-    wheeled->MoveForward();
-    std::cout << wheeled->get_x() << std::endl;
-    std::cout << wheeled->get_y() << std::endl;
-    wheeled->TurnLeft();
-    std::cout << wheeled->GetDirection() << std::endl;
-    wheeled->TurnLeft();
-    std::cout << wheeled->GetDirection() << std::endl;
-    std::cout << wheeled->get_x() << std::endl;
-    std::cout << wheeled->get_y() << std::endl;
-    wheeled->MoveForward();
-    std::cout << wheeled->get_x() << std::endl;
-    std::cout << wheeled->get_y() << std::endl;
-    wheeled->TurnLeft();
-    std::cout << wheeled->GetDirection() << std::endl;
-    std::cout << wheeled->get_x() << std::endl;
-    std::cout << wheeled->get_y() << std::endl;
-    wheeled->MoveForward();
-    std::cout << wheeled->get_x() << std::endl;
-    std::cout << wheeled->get_y() << std::endl;
-    wheeled->TurnRight();
-    std::cout << wheeled->GetDirection() << std::endl;
-    delete wheeled;
+    std::shared_ptr<fp::LandBasedRobot> wheeled = std::make_shared<fp::LandBasedWheeled>("Husky");
+    fp::Algorithm algo;
+    algo.Solve(wheeled);
     return 0;
 }

@@ -1,4 +1,5 @@
 #include "landbasedtracked.h"
+#include "../API/api.h"
 #include <iostream>
 
 
@@ -12,6 +13,7 @@ char fp::LandBasedTracked::GetDirection(){
 // Move the robot forward in the maze
 void fp::LandBasedTracked::MoveForward(){
     std::cout << "LandBasedTracked::MoveForward is called\n";
+//    fp::API::moveForward();
     char direction = LandBasedRobot::get_direction();
     double speed = LandBasedRobot::get_speed();
     switch (direction){
@@ -39,6 +41,7 @@ void fp::LandBasedTracked::MoveForward(){
 // Rotate the robot 90 degrees counter-clockwise
 void fp::LandBasedTracked::TurnLeft(){
     std::cout << "LandBasedTracked::TurnLeft is called\n";
+//    fp::API::turnLeft();
     char direction = LandBasedRobot::get_direction();
     switch (direction){
         case 'N':
@@ -65,6 +68,7 @@ void fp::LandBasedTracked::TurnLeft(){
 // Rotate the robot 90 degrees clockwise
 void fp::LandBasedTracked::TurnRight(){
     std::cout << "LandBasedTracked::TurnRight is called\n";
+//    fp::API::turnRight();
     char direction = LandBasedRobot::get_direction();
     switch (direction){
         case 'N':
