@@ -1,0 +1,4 @@
+<map id="rwa3::LandBasedRobot::LandBasedRobot" name="rwa3::LandBasedRobot::LandBasedRobot">
+<area shape="rect" id="node2" href="$classrwa3_1_1_land_based_tracked.html#a6c01e71b831c82158a388a91b69eccb4" title="Costructors and destructor in class LandBasedTracked are public, and are used to make obects using de..." alt="" coords="214,5,385,47"/>
+<area shape="rect" id="node3" href="$classrwa3_1_1_land_based_wheeled.html#a48acb253edf912da8e0257acd0ac5177" title="Costructors and destructor in class LandBasedWheeled are public, and are used to make obects using de..." alt="" coords="212,71,387,112"/>
+</map>

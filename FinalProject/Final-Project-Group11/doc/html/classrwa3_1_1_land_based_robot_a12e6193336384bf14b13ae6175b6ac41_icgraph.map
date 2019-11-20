@@ -1,0 +1,5 @@
+<map id="rwa3::LandBasedRobot::PickUp" name="rwa3::LandBasedRobot::PickUp">
+<area shape="rect" id="node2" href="$main_8cpp.html#ae60ecf564da83c33582ae9d620848e4e" title="Two robot are asked to navigate a maze and pick up objects. It starts at a specific position in the m..." alt="" coords="237,5,361,32"/>
+<area shape="rect" id="node3" href="$classrwa3_1_1_land_based_tracked.html#a2b7a579ab594ce9ea29ae43c9e05aa9a" title="Methods Definitions. " alt="" coords="214,57,385,98"/>
+<area shape="rect" id="node4" href="$classrwa3_1_1_land_based_wheeled.html#ab82b70a4b471e98422f6ab22c0d7ff11" title="Methods Definitions. " alt="" coords="212,122,387,163"/>
+</map>
