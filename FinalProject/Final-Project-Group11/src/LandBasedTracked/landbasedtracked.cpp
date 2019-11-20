@@ -4,7 +4,7 @@
 
 
 //----Methods Definitions----
-// Get the direction of the robot in the maze
+// Get the current direction of the robot in the maze
 char fp::LandBasedTracked::GetDirection(){
     std::cout << "LandBasedTracked::GetDirection is called\n";
     return LandBasedRobot::get_direction();

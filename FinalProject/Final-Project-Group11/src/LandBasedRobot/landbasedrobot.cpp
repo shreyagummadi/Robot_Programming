@@ -1,10 +1,41 @@
 #include "landbasedrobot.h"
+#include "../API/api.h"
 #include <iostream>
 
 
 //----Methods Definitions----
 
+//Function for getting the current direction of the robot forward
+void fp::LandBasedRobot::GetDirection(){
+//    std::cout << "LandBasedRobot::GetDirection is called\n";
+    Maze::getNextDirection();
+    /*
+     */
+}
 
+//Function for moving the robot forward
+void fp::LandBasedRobot::MoveForward(){
+//    std::cout << "LandBasedRobot::MoveForward is called\n";
+    API::moveForward();
+    /*
+     */
+}
+
+//Function for rotate the robot 90 degrees Counter-Clockwise
+void fp::LandBasedRobot::TurnLeft(){
+//    std::cout << "LandBasedRobot::TurnLeft is called\n";
+    API::turnLeft();
+    /*
+     */
+}
+
+//Function for rotate the robot 90 degrees Clockwise
+void fp::LandBasedRobot::TurnRight(){
+//    std::cout << "LandBasedRobot::TurnRight is called\n";
+    API::turnRight();
+    /*
+     */
+}
 
 //----constructor definition----
 

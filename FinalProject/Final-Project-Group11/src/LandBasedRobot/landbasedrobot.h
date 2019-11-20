@@ -14,8 +14,8 @@ class LandBasedRobot{
     public:
 
 /**
-* @brief Constructors and destructor in class LandBasedRobot are public, and are used to make other obects from derived classes
-* @return
+* @brief Constructors and destructor in class LandBasedRobot are public, and are used to make or destruct other objects from derived classes
+* @return Objects from other derived classes
 */
 
     //---constructor initialize---
@@ -33,7 +33,7 @@ class LandBasedRobot{
 
 /**
 * @brief Methods are public and virtual in class LandBasedRobot, and work like functions.
-* @return return the function being called by the derived class which overrides them.
+* @return returns the function being called by the derived class which overrides them.
 */
 
 //----Methods Prototypes----
@@ -121,7 +121,7 @@ class LandBasedRobot{
  * @param capacity_
  * @param x_
  * @param y_
- * @param direction_
+ * @param direction_:robot always start facing North
  * @return the specific attributed called from an accesor or mutator (string, double, int, char) 
  */
 

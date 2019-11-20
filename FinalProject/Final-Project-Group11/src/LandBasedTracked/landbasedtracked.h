@@ -1,6 +1,5 @@
 #pragma once
-#include "landbasedrobot.h"
-
+#include "../LandBasedRobot/landbasedrobot.h"
 
 namespace fp{
     
@@ -18,11 +17,11 @@ class LandBasedTracked : public LandBasedRobot{
 
 /**
 * @brief Constructors and destructor in class LandBasedTracked are public, and are used to make/destroy objects using deep copy from base class LandBasedRobot
-* @return creates/destroys LandBasedTracked objects from LandBasedTracked class
+* @return creates/destroys LandBasedTracked objects from LandBasedRobot class
 */
 
     //---Derived class constructor initialize---
-        LandBasedTracked(std::string name="Anonymous Tracked Robot", int x=0, int y=0, double speed=1.0, double width=1.0, double length=1.0,double height=1.0, double capacity=1.0, char direction='N');
+        LandBasedTracked(std::string name="LT2-F", int x=0, int y=0, double speed=1.0, double width=1.0, double length=1.0,double height=1.0, double capacity=1.0, char direction='N');
 
     //---Derived Class Copy Constructor initialize---
         LandBasedTracked(const LandBasedTracked &source);

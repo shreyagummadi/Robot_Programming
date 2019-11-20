@@ -1,5 +1,5 @@
 #pragma once
-#include "landbasedrobot.h"
+#include "../LandBasedRobot/landbasedrobot.h"
 
 
 namespace fp{
@@ -22,7 +22,7 @@ class LandBasedWheeled : public LandBasedRobot{
 */
 
     //---Derived class constructor initialize---
-    	LandBasedWheeled(std::string name="Anonymous Wheeled Robot", int x=0, int y=0, double speed=1.0, double width=1.0, double length=1.0,double height=1.0, double capacity=1.0, char direction='N');
+    	LandBasedWheeled(std::string name="Husky", int x=0, int y=0, double speed=1.0, double width=1.0, double length=1.0,double height=1.0, double capacity=1.0, char direction='N');
 
     //---Derived Class Copy Constructor---
     	LandBasedWheeled(const LandBasedWheeled &source);

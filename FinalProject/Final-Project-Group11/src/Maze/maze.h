@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Byte.h"
-#include "Direction.h"
+#include "../Byte.h"
+#include "../Direction.h"
 
 namespace fp {
 
@@ -73,6 +73,6 @@ struct Maze {
     static byte getStraightAwayLength(byte cell);
     static void setStraightAwayLength(byte cell, byte straightAwayLength);
 
-};
+};//--class Maze
 
-}
+}//--namespace fp

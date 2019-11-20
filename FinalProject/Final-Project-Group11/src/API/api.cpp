@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <iostream>
 
+//----Methods Definitions----
+
 int fp::API::mazeWidth() {
     std::cout << "mazeWidth" << std::endl;
     std::string response;
