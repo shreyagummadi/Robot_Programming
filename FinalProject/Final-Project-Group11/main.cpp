@@ -18,20 +18,20 @@
 *
 * @section DESCRIPTION
 *
-* This project is to develop the structure of two robots navigating and picking up 
-* object in a maze, using object-oriented-programming, inheritance and polymorphism.
+* This project is to develop the program for two kind of robots which navigates through a maze to reach the goal location 
+* which is the center of the maze, using object-oriented-programming, inheritance and dynamic polymorphism.
 */
 
 #include <memory>
 #include "../Algorithm/algorithm.h"
-#include "landbasedwheeled.h"
-#include "landbasedtracked.h"
+#include "LandBasedTracked/landbasedtracked.h"
+#include "LandBasedWheeled/landbasedwheeled.h"
 #include <vector>
 #include <iostream>
 #include <string>
 
 /**
-* @brief Two robot are asked to navigate a maze and pick up objects. It starts at a specific position in the maze (the starting position)and is asked to try to reach another position in the maze (the goal position).
+* @brief The program will run methods to solve the maze, generate a path from strat to goal, and drive one of the two robot to follow the path and navigate a maze from an specific position in the maze (the starting position) to reach another position in the maze (the goal position).
 * @author Raghav Agarwal <ragarwal@terpmail.umd.edu> Diego Camargo <camargo1@terpmail.umd.edu> Shreya Gummadi <shreyagummadi@gmail.com> Revati Naik <revatin@umd.edu> Akshitha Pothamshetty <apothams@terpmail.umd.edu> Thomas Sullivan <Tsulliv5@umd.edu>
 */
 
