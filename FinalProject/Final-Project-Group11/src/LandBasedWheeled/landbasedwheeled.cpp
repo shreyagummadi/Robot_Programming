@@ -9,11 +9,6 @@ void fp::LandBasedWheeled::speedUp(int num_cells){
 //    std::cout << "LandBasedWheeled::SpeedUp is called\n";
     LandBasedRobot::setSpeed(num_cells);
 }
-// Get the direction of the robot in the maze
-char fp::LandBasedWheeled::getDirection(){
-//    std::cout << "LandBasedWheeled::GetDirection is called\n";
-    return LandBasedRobot::getDirection();
-}
 
 // Move the robot forward in the maze
 void fp::LandBasedWheeled::moveForward(){

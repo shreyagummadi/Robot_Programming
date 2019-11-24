@@ -1,6 +1,6 @@
-#include "History.h"
+#include "history.h"
 
-#include "Assert.h"
+#include "assert.h"
 
 byte History::m_size = 0;
 byte History::m_tail = 0;

@@ -3,12 +3,13 @@
 #include <iostream>
 #include <memory>
 
-#include "API/api.h"
-#include "Maze/maze.h"
-#include "Byte/byte.h"
+#include "api.h"
+#include "maze.h"
+#include "byte.h"
+#include "history.h"
 
 
-void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
+void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
      // Ensure that the maze size is sane
     if (!(
         1 <= fp::Maze::WIDTH &&
@@ -35,8 +36,8 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
     }
 
     // Initialize the robot
-    robot_x = robot.getX();
-    robot_y = robot.getY();
+    robot_x = robot->getX();
+    robot_y = robot->getY();
     robot_d = Direction::NORTH;
     bool isWall = false;
     
@@ -53,30 +54,30 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         }
         
         // If current position equals any of the goal positions, SUCCESS
-        if ( ( (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CLLY) || (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CURY) 
-                || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CURY) || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CLLY) ) {
+        if ( ( (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CLLY) || (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CURY)
+        || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CURY) || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CLLY) ) ){
             std::cerr << "Success!" << std::endl;
             reset(robot);
             break;
         }
         
         // Need to look for a southern wall first so need to make sure the robot is facing south
-        switch ( robot.getDirection() ){
+        switch ( robot->getDirection() ){
             case 'N':
                 fp::API::turnRight();
-                robot.turnRight();
+                robot->turnRight();
                 fp::API::turnRight();
-                robot.turnRight();
+                robot->turnRight();
                 robot_d = Direction::SOUTH;
                 break;
             case 'E':
                 fp::API::turnRight();
-                robot.turnRight();
+                robot->turnRight();
                 robot_d = Direction::SOUTH;
                 break;
             case 'W':
                 fp::API::turnLeft();
-                robot.turnLeft();
+                robot->turnLeft();
                 robot_d = Direction::SOUTH;
                 break;
             default:
@@ -91,8 +92,8 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
-            robot.moveForward();
-            robot_y = robot.getY();
+            robot->moveForward();
+            robot_y = robot->getY();
             // Move the tail pointer to point to new cell in History after move to new cell in maze
             History::move();
             continue;
@@ -104,7 +105,7 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         }
         
         fp::API::turnLeft();
-        robot.turnLeft();
+        robot->turnLeft();
         robot_d = Direction::EAST;
         if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
@@ -113,8 +114,8 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
-            robot.moveForward();
-            robot_x = robot.getX();
+            robot->moveForward();
+            robot_x = robot->getX();
             // Update History after move
             History::move();
             // Return back to the top of the while loop
@@ -127,7 +128,7 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         }
         
         fp::API::turnLeft();
-        robot.turnLeft();
+        robot->turnLeft();
         robot_d = Direction::NORTH;
         if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
@@ -136,8 +137,8 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
-            robot.moveForward();
-            robot_y = robot.getY();
+            robot->moveForward();
+            robot_y = robot->getY();
             // Update history after move
             History::move();
             // Return back to the top of the while loop
@@ -150,7 +151,7 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         }
         
         fp::API::turnLeft();
-        robot.turnLeft();
+        robot->turnLeft();
         robot_d = Direction::WEST;
         if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
@@ -159,8 +160,8 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
-            robot.moveForward();
-            robot_y = robot.getY();
+            robot->moveForward();
+            robot_y = robot->getY();
             // Update history after move
             History::move();
             // Return back to the top of the while loop
@@ -172,8 +173,7 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             setCellWall(isWall);
         }
         
-        fp::API::setText( robot_x, robot_y, '0');
-        clearColor(robot_x, robot_y);
+        fp::API::clearColor(robot_x, robot_y);
         
         // Retreat robot one cell... to do this we have to compare the x and y coordinates of the current cell
         // with the previous cell (by popping it from History to give us access to the previous cell, which then needs to be popped), then
@@ -187,33 +187,34 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         // and turn 180 degrees around (turn from WEST to EAST)
         if ( (current_cell >> 4) < (previous_cell >> 4) ) {
             fp::API::turnRight();
-            robot.turnRight();
+            robot->turnRight();
             fp::API::turnRight();
-            robot.turnRight();
+            robot->turnRight();
             robot_d = Direction::EAST;
         }
         // Check if current y coordinate is less than previous y coordinate (current cell is SOUTH of previous cell)
         // and turn -90 degrees around (turn from WEST to NORTH)
         if ( (current_cell &= 16) < (previous_cell &= 16) ) {
             fp::API::turnRight();
-            robot.turnRight();
+            robot->turnRight();
             robot_d = Direction::NORTH;
         }
         // Check if current y coordinate is greater than previous y coordinate (current cell is NORTH of previous cell)
         // and turn 90 degrees around (turn from WEST to SOUTH)
         if ( (current_cell &= 16) > (previous_cell &= 16) ) {
             fp::API::turnLeft();
-            robot.turnLeft();
+            robot->turnLeft();
             robot_d = Direction::SOUTH;
         }
         // Don't need to check for case where current cell is EAST of previous cell because robot is already facing WEST in the algorithm
         
         // Move robot forward
         fp::API::moveForward();
-        robot.moveForward();
-        robot_x = robot.getX();
-        robot_y = robot.getY();
+        robot->moveForward();
+        robot_x = robot->getX();
+        robot_y = robot->getY();
         // Return back to the top of the while loop
+    }
 }
 
 void fp::Algorithm::colorCenter(char color) {
@@ -230,7 +231,7 @@ void fp::Algorithm::setCellWall(bool isWall) {
     fp::Maze::setWall(robot_x, robot_y, robot_d, isWall);
     static char directionChars[] = {'n', 'e', 's', 'w'};
     if ( isWall ) {
-        API::setWall(robot_x, robot_y directionChars[robot_d]);
+        API::setWall(robot_x, robot_y, directionChars[robot_d]);
         data |= 1 << (robot_d + 4);
         data |= 1 << robot_d;
     }
@@ -245,11 +246,11 @@ void fp::Algorithm::reset(std::shared_ptr<fp::LandBasedRobot> robot) {
 
     // Reset some state
     robot_x = 0;
-    robot.setX(robot_x);
+    robot->setX(robot_x);
     robot_y = 0;
-    robot.setY(robot_y);
+    robot->setY(robot_y);
     robot_d = Direction::NORTH;
-    robot.setDirection('N');
+    robot->setDirection('N');
 
     // Roll back some cell wall data
     while (0 < History::size()) {

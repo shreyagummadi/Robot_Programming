@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <memory>
 
 namespace fp{
     
@@ -29,7 +30,7 @@ class LandBasedRobot{
     //---Destructor---	
     	virtual ~LandBasedRobot(){
 //        std::cout << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
-    }
+        }
 
 /**
 * @brief Methods are public and virtual in class LandBasedRobot, and work like functions.
@@ -37,8 +38,6 @@ class LandBasedRobot{
 */
 
 //----Methods Prototypes----
-
-        virtual char getDirection() = 0;// Get the direction of the robot in the maze.
         virtual void moveForward() = 0;// Move the robot forward.
         virtual void turnLeft() = 0;// Rotate the robot 90 degrees counter-clockwise.
         virtual void turnRight() = 0;// Rotate the robot 90 degrees clockwise.

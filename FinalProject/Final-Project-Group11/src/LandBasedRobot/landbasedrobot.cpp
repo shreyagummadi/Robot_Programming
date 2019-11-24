@@ -1,14 +1,9 @@
 #include "landbasedrobot.h"
 #include "../API/api.h"
 #include <iostream>
-
+#include <memory>
 
 //----Methods Definitions----
-
-//Function for getting the current direction of the robot forward
-void fp::LandBasedRobot::getDirection(){
-//    std::cout << "LandBasedRobot::GetDirection is called\n";
-}
 
 //Function for moving the robot forward
 void fp::LandBasedRobot::moveForward(){

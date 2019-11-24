@@ -1,13 +1,18 @@
 Debug/src_Algorithm_algorithm.cpp.o: src/Algorithm/algorithm.cpp \
- src/Algorithm/algorithm.h Byte/byte.h Direction/direction.h Maze/maze.h \
- API/api.h
+ src/Algorithm/algorithm.h src/Byte/byte.h src/Direction/direction.h \
+ src/Maze/maze.h src/LandBasedRobot/landbasedrobot.h src/API/api.h \
+ src/History/history.h
 
 src/Algorithm/algorithm.h:
 
-Byte/byte.h:
+src/Byte/byte.h:
 
-Direction/direction.h:
+src/Direction/direction.h:
 
-Maze/maze.h:
+src/Maze/maze.h:
 
-API/api.h:
+src/LandBasedRobot/landbasedrobot.h:
+
+src/API/api.h:
+
+src/History/history.h:

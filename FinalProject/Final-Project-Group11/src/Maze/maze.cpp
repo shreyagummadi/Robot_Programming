@@ -1,4 +1,5 @@
 #include "maze.h"
+
 using namespace fp;
 
 byte Maze::m_data[] = {0};

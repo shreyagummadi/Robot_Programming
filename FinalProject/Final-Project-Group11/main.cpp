@@ -23,9 +23,9 @@
 */
 
 #include <memory>
-#include "Algorithm/algorithm.h"
-#include "LandBasedTracked/landbasedtracked.h"
-#include "LandBasedWheeled/landbasedwheeled.h"
+#include "algorithm.h"
+#include "landbasedtracked.h"
+#include "landbasedwheeled.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -38,7 +38,8 @@
 
 int main(){
     std::shared_ptr<fp::LandBasedRobot> wheeled = std::make_shared<fp::LandBasedWheeled>("Husky");
+    
     fp::Algorithm algo;
-    algo.Solve(wheeled);
+    algo.solve(wheeled);
     return 0;
 }

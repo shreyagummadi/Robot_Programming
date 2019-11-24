@@ -9,13 +9,13 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="Direction">
-      <File Name="src/direction.h"/>
+      <File Name="src/Direction/direction.h"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Assert">
-      <File Name="src/assert.h"/>
+      <File Name="src/Assert/assert.h"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Byte">
-      <File Name="src/byte.h"/>
+      <File Name="src/Byte/byte.h"/>
     </VirtualDirectory>
     <VirtualDirectory Name="History">
       <File Name="src/History/history.cpp"/>
