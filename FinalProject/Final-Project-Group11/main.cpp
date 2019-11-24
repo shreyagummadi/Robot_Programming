@@ -22,10 +22,12 @@
 * which is the center of the maze, using object-oriented-programming, inheritance and dynamic polymorphism.
 */
 
+
+#include "../Algorithm/algorithm.h"
+#include "../LandBasedTracked/landbasedtracked.h"
+#include "../LandBasedWheeled/landbasedwheeled.h"
+
 #include <memory>
-#include "algorithm.h"
-#include "landbasedtracked.h"
-#include "landbasedwheeled.h"
 #include <vector>
 #include <iostream>
 #include <string>

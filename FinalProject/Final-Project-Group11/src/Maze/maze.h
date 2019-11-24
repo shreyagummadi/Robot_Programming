@@ -1,7 +1,7 @@
 #pragma once
 
-#include "byte.h"
-#include "direction.h"
+#include "../Byte/byte.h"
+#include "../Direction/direction.h"
 
 namespace fp {
 struct Maze {

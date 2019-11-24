@@ -1,4 +1,4 @@
-#include "maze.h"
+#include "../Maze/maze.h"
 
 using namespace fp;
 

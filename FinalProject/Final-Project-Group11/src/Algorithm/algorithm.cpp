@@ -1,12 +1,11 @@
-#include "algorithm.h"
+#include "../Algorithm/algorithm.h"
+#include "../API/api.h"
+#include "../Maze/maze.h"
+#include "../Byte/byte.h"
+#include "../History/history.h"
 
 #include <iostream>
 #include <memory>
-
-#include "api.h"
-#include "maze.h"
-#include "byte.h"
-#include "history.h"
 
 
 void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {

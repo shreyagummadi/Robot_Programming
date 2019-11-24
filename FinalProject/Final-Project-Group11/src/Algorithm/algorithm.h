@@ -1,11 +1,11 @@
 #pragma once
 
-#include <memory>
+#include "../Byte/byte.h"
+#include "../Direction/direction.h"
+#include "../Maze/maze.h"
+#include "../LandBasedRobot/landbasedrobot.h"
 
-#include "byte.h"
-#include "direction.h"
-#include "maze.h"
-#include "landbasedrobot.h"
+#include <memory>
 
 
 namespace fp {
