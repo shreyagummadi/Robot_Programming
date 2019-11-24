@@ -40,10 +40,10 @@ class LandBasedTracked : public LandBasedRobot{
 //----Methods Prototypes----
 
 
-        virtual char GetDirection() override;// Get the direction of the robot in the maze.
-        virtual void MoveForward() override;// Move the robot forward.
-        virtual void TurnLeft() override;// Rotate the robot 90 degrees counter-clockwise.
-        virtual void TurnRight() override;// Rotate the robot 90 degrees clockwise.
+        virtual char getDirection() override;// Get the direction of the robot in the maze.
+        virtual void moveForward() override;// Move the robot forward.
+        virtual void turnLeft() override;// Rotate the robot 90 degrees counter-clockwise.
+        virtual void turnRight() override;// Rotate the robot 90 degrees clockwise.
 
 /**
  * @brief protected attributes that can be used only by class LandBasedTracked

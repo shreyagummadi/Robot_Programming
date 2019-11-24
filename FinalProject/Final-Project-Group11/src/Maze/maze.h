@@ -23,7 +23,25 @@ class Maze {
     static bool isWall(byte cell, byte direction);
     static void setWall(byte cell, byte direction, bool isWall);
     static void clearWall(byte cell, byte direction);
-
+    static byte getMazeWidth() const {
+        return WIDTH;
+    }
+    static byte getMazeHeight() const {
+        return HEIGHT;
+    }
+    static byte getCLLX() const {
+        return CLLX;
+    }
+    static byte getCLLY() const {
+        return CLLY;
+    }
+    static byte getCURX() const {
+        return CURX;
+    }
+    static byte getCURY() const {
+        return CURY;
+    }
+    
     protected:
 
     // The width and height of the maze, as understood

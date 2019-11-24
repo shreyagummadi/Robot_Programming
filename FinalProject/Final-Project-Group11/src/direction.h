@@ -1,6 +1,6 @@
 #pragma once
 
-#include "byte.h"
+#include "Byte.h"
 
 struct Direction {
 

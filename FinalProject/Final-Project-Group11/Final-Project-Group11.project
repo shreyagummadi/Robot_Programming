@@ -8,13 +8,19 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="src/Assert.h"/>
+    <VirtualDirectory Name="Direction">
+      <File Name="src/direction.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Assert">
+      <File Name="src/assert.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Byte">
+      <File Name="src/byte.h"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="History">
       <File Name="src/History/history.cpp"/>
       <File Name="src/History/history.h"/>
     </VirtualDirectory>
-    <File Name="src/direction.h"/>
-    <File Name="src/byte.h"/>
     <VirtualDirectory Name="Maze">
       <File Name="src/Maze/maze.cpp"/>
       <File Name="src/Maze/maze.h"/>
@@ -57,6 +63,13 @@
         <IncludePath Value="src/LandBasedRobot"/>
         <IncludePath Value="src/LandBasedTracked"/>
         <IncludePath Value="src/LandBasedWheeled"/>
+        <IncludePath Value="src/Algorithm"/>
+        <IncludePath Value="src/API"/>
+        <IncludePath Value="src/History"/>
+        <IncludePath Value="src/Maze"/>
+        <IncludePath Value="src/Byte"/>
+        <IncludePath Value="src/Assert"/>
+        <IncludePath Value="src/Direction"/>
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>

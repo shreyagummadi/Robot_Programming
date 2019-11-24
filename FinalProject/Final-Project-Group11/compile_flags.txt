@@ -10,3 +10,10 @@
 -I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedRobot
 -I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked
 -I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Algorithm
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/API
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/History
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Maze
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Byte
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Assert
+-I/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Direction

@@ -4,31 +4,31 @@
 
 //----Methods Definitions----
 // Get the current direction of the robot in the maze
-char fp::LandBasedTracked::GetDirection(){
-    std::cout << "LandBasedTracked::GetDirection is called\n";
-    return LandBasedRobot::get_direction();
+char fp::LandBasedTracked::getDirection(){
+//    std::cout << "LandBasedTracked::GetDirection is called\n";
+    return LandBasedRobot::getDirection();
 }
 
 // Move the robot forward in the maze
-void fp::LandBasedTracked::MoveForward(){
-    std::cout << "LandBasedTracked::MoveForward is called\n";
-    char direction = LandBasedRobot::get_direction();
+void fp::LandBasedTracked::moveForward(){
+//    std::cout << "LandBasedTracked::MoveForward is called\n";
+    char direction = LandBasedRobot::getDirection();
     switch (direction){
         case 'N':
-            LandBasedRobot::set_y(y_);
-            std::cout << "case N" << std::endl;
+            LandBasedRobot::setY(y_);
+//            std::cout << "case N" << std::endl;
             break;
         case 'E':
-            LandBasedRobot::set_x(x_);
-            std::cout << "case E" << std::endl;
+            LandBasedRobot::setX(x_);
+//            std::cout << "case E" << std::endl;
             break;
         case 'S':
-            LandBasedRobot::set_y(y_);
-            std::cout << "case S" << std::endl;
+            LandBasedRobot::setY(y_);
+//            std::cout << "case S" << std::endl;
             break;
         case 'W':
-            LandBasedRobot::set_x(x_);
-            std::cout << "case W" << std::endl;
+            LandBasedRobot::setX(x_);
+//            std::cout << "case W" << std::endl;
             break;
         default:
             break;
@@ -36,25 +36,25 @@ void fp::LandBasedTracked::MoveForward(){
 }
 
 // Rotate the robot 90 degrees counter-clockwise
-void fp::LandBasedTracked::TurnLeft(){
-    std::cout << "LandBasedTracked::TurnLeft is called\n";
-    char direction = LandBasedRobot::get_direction();
+void fp::LandBasedTracked::turnLeft(){
+//    std::cout << "LandBasedTracked::TurnLeft is called\n";
+    char direction = LandBasedRobot::getDirection();
     switch (direction){
         case 'N':
-            LandBasedRobot::set_direction('W');
-            std::cout << "Turning Left...North to West" << std::endl;
+            LandBasedRobot::setDirection('W');
+//            std::cout << "Turning Left...North to West" << std::endl;
             break;
         case 'E':
-            LandBasedRobot::set_direction('N');
-            std::cout << "Turning Left...East to North" << std::endl;
+            LandBasedRobot::setDirection('N');
+//            std::cout << "Turning Left...East to North" << std::endl;
             break;
         case 'S':
-            LandBasedRobot::set_direction('E');
-            std::cout << "Turning Left...South to East" << std::endl;
+            LandBasedRobot::setDirection('E');
+//            std::cout << "Turning Left...South to East" << std::endl;
             break;
         case 'W':
-            LandBasedRobot::set_direction('S');
-            std::cout << "Turning Left...West to South" << std::endl;
+            LandBasedRobot::setDirection('S');
+//            std::cout << "Turning Left...West to South" << std::endl;
             break;
         default:
             break;
@@ -62,25 +62,25 @@ void fp::LandBasedTracked::TurnLeft(){
 }
 
 // Rotate the robot 90 degrees clockwise
-void fp::LandBasedTracked::TurnRight(){
-    std::cout << "LandBasedTracked::TurnRight is called\n";
-    char direction = LandBasedRobot::get_direction();
+void fp::LandBasedTracked::turnRight(){
+//    std::cout << "LandBasedTracked::TurnRight is called\n";
+    char direction = LandBasedRobot::getDirection();
     switch (direction){
         case 'N':
-            LandBasedRobot::set_direction('E');
-            std::cout << "Turning Right...North to East" << std::endl;
+            LandBasedRobot::setDirection('E');
+//            std::cout << "Turning Right...North to East" << std::endl;
             break;
         case 'E':
-            LandBasedRobot::set_direction('S');
-            std::cout << "Turning Right...East to South" << std::endl;
+            LandBasedRobot::setDirection('S');
+//            std::cout << "Turning Right...East to South" << std::endl;
             break;
         case 'S':
-            LandBasedRobot::set_direction('W');
-            std::cout << "Turning Right...South to West" << std::endl;
+            LandBasedRobot::setDirection('W');
+//            std::cout << "Turning Right...South to West" << std::endl;
             break;
         case 'W':
-            LandBasedRobot::set_direction('N');
-            std::cout << "Turning Right...West to North" << std::endl;
+            LandBasedRobot::setDirection('N');
+//            std::cout << "Turning Right...West to North" << std::endl;
             break;
         default:
             break;

@@ -28,7 +28,7 @@ class LandBasedRobot{
     
     //---Destructor---	
     	virtual ~LandBasedRobot(){
-        std::cout << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
+//        std::cout << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
     }
 
 /**
@@ -38,10 +38,10 @@ class LandBasedRobot{
 
 //----Methods Prototypes----
 
-        virtual char GetDirection() = 0;// Get the direction of the robot in the maze.
-        virtual void MoveForward() = 0;// Move the robot forward.
-        virtual void TurnLeft() = 0;// Rotate the robot 90 degrees counter-clockwise.
-        virtual void TurnRight() = 0;// Rotate the robot 90 degrees clockwise.
+        virtual char getDirection() = 0;// Get the direction of the robot in the maze.
+        virtual void moveForward() = 0;// Move the robot forward.
+        virtual void turnLeft() = 0;// Rotate the robot 90 degrees counter-clockwise.
+        virtual void turnRight() = 0;// Rotate the robot 90 degrees clockwise.
 
 //----accessors & mutators----
 
@@ -54,28 +54,28 @@ class LandBasedRobot{
         std::string get_name() const{
             return name_;
         }
-        int get_x() const{
+        int getX() const{
             return x_;
         }
-        int get_y() const{
+        int getY() const{
             return y_;
         }
-        double get_speed() const{
+        double getSpeed() const{
             return speed_;
         }
-        double get_width() const{
+        double getWidth() const{
             return width_;
         }
-        double get_length() const{
+        double getLength() const{
             return length_;
         }
-        double get_height() const{
+        double getHeight() const{
             return height_;
         }
-        double get_capacity() const{
+        double getCapacity() const{
             return capacity_;
         }
-        char get_direction() const{
+        char getDirection() const{
             return direction_;
         }
         
@@ -83,28 +83,28 @@ class LandBasedRobot{
         void set_name(std::string name){
             name_= name;
         }
-        void set_x(int x){
+        void setX(int x){
             x_= x;
         }
-        void set_y(int y){
+        void setY(int y){
             y_= y;
         }
-        void set_speed(double speed){
+        void setSpeed(double speed){
             speed_= speed;
         }
-        void set_width(double width){
+        void setWidth(double width){
             width_= width;
         }
-        void set_length(double length){
+        void setLength(double length){
             length_= length;
         }
-        void set_height(double height){
+        void setHeight(double height){
             height_= height;
         }
-        void set_capacity(double capacity){
+        void setCapacity(double capacity){
             capacity_= capacity;
         }
-        void set_direction(char direction){
+        void setDirection(char direction){
             direction_= direction;
         }
 

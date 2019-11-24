@@ -1,12 +1,15 @@
 Debug/main.cpp.o: main.cpp src/LandBasedRobot/../Algorithm/algorithm.h \
- src/LandBasedTracked/landbasedtracked.h \
- src/LandBasedRobot/landbasedrobot.h \
- src/LandBasedWheeled/landbasedwheeled.h
+ byte.h direction.h maze.h LandBasedTracked/landbasedtracked.h \
+ LandBasedWheeled/landbasedwheeled.h
 
 src/LandBasedRobot/../Algorithm/algorithm.h:
 
-src/LandBasedTracked/landbasedtracked.h:
+byte.h:
 
-src/LandBasedRobot/landbasedrobot.h:
+direction.h:
 
-src/LandBasedWheeled/landbasedwheeled.h:
+maze.h:
+
+LandBasedTracked/landbasedtracked.h:
+
+LandBasedWheeled/landbasedwheeled.h:

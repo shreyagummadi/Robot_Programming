@@ -2,9 +2,9 @@
 
 #include <memory>
 
-#include "byte.h"
-#include "direction.h"
-#include "maze.h"
+#include "Byte/byte.h"
+#include "Direction/direction.h"
+#include "Maze/maze.h"
 
 namespace fp {
 class Algorithm {
@@ -12,6 +12,8 @@ class Algorithm {
     public:
     
     void Solve(std::shared_ptr<fp::LandBasedRobot> robot);
+    void colorCenter(char color);
+    void setCellWall(bool isWall);
 
     private:
 
