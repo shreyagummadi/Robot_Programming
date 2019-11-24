@@ -10,50 +10,30 @@ class Maze {
     public:
     // Helper methods for converting between xy coordinates
     // and the maze index of the cell in the data array
-    static byte getX(byte cell);
-    static byte getY(byte cell);
-    static byte getCell(byte x, byte y);
+    byte getX(byte cell);
+    byte getY(byte cell);
+    byte getCell(byte x, byte y);
 
     // Helper methods for querying and updating maze data
-    static bool isKnown(byte x, byte y, byte direction);
-    static bool isWall(byte x, byte y, byte direction);
-    static void setWall(byte x, byte y, byte direction, bool isWall);
-    static void clearWall(byte x, byte y, byte direction);
-    static bool isKnown(byte cell, byte direction);
-    static bool isWall(byte cell, byte direction);
-    static void setWall(byte cell, byte direction, bool isWall);
-    static void clearWall(byte cell, byte direction);
-    static byte getMazeWidth() const {
-        return WIDTH;
-    }
-    static byte getMazeHeight() const {
-        return HEIGHT;
-    }
-    static byte getCLLX() const {
-        return CLLX;
-    }
-    static byte getCLLY() const {
-        return CLLY;
-    }
-    static byte getCURX() const {
-        return CURX;
-    }
-    static byte getCURY() const {
-        return CURY;
-    }
+    bool isKnown(byte x, byte y, byte direction);
+    bool isWall(byte x, byte y, byte direction);
+    void setWall(byte x, byte y, byte direction, bool isWall);
+    void clearWall(byte x, byte y, byte direction);
+    bool isKnown(byte cell, byte direction);
+    bool isWall(byte cell, byte direction);
+    void setWall(byte cell, byte direction, bool isWall);
+    void clearWall(byte cell, byte direction);
     
-    protected:
-
-    // The width and height of the maze, as understood
+        // The width and height of the maze, as understood
     // by the algorithm, both of which must be in [1, 16]
-    static const byte WIDTH  = 16;
-    static const byte HEIGHT = 16;
+    const byte WIDTH  = 16;
+    const byte HEIGHT = 16;
 
     // The x and y positions of the lower left and upper right center cells
-    static const byte CLLX = (WIDTH  - 1) / 2;
-    static const byte CLLY = (HEIGHT - 1) / 2;
-    static const byte CURX = (WIDTH     ) / 2;
-    static const byte CURY = (HEIGHT    ) / 2;
+    const byte CLLX = (WIDTH  - 1) / 2;
+    const byte CLLY = (HEIGHT - 1) / 2;
+    const byte CURX = (WIDTH     ) / 2;
+    const byte CURY = (HEIGHT    ) / 2;
 
     // For each cell, we store only eight bits of information: four bits for
     // whether we know the value of a wall, and four bits for the actual value
@@ -67,7 +47,11 @@ class Maze {
     // Furthermore, each cell can be indexed by just eight bits: at most
     // four bits for the x position, and at most four bits for the y position
     //      
-    static byte m_data[WIDTH * HEIGHT];
+    byte m_data[WIDTH * HEIGHT];
+    
+    protected:
+
+
 
 };
 

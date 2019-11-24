@@ -11,10 +11,10 @@
 void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
      // Ensure that the maze size is sane
     if (!(
-        1 <= fp::Maze::getMazeWidth() &&
-        1 <= fp::Maze::getMazeHeight() &&
-        fp::Maze::getMazeWidth() <= 16 &&
-        fp::Maze::getMazeHeight() <= 16
+        1 <= fp::Maze::WIDTH &&
+        1 <= fp::Maze::HEIGHT &&
+        fp::Maze::WIDTH <= 16 &&
+        fp::Maze::HEIGHT <= 16
     )) {
         std::cerr << "ERROR - Maze::WIDTH and Maze::HEIGHT must be in [1, 16]"
                   << std::endl;
@@ -23,12 +23,12 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
 
     // Ensure that the maze size is as expected
     if (!(
-        fp::Maze::getMazeWidth() == fp::API::mazeWidth() &&
-        fp::Maze::getMazeHeight() == fp::API::mazeHeight()
+        fp::Maze::WIDTH == fp::API::mazeWidth() &&
+        fp::Maze::HEIGHT == fp::API::mazeHeight()
     )) {
         std::cerr << "WARNING - configured for "
-                  << static_cast<unsigned int>(fp::Maze::getMazeWidth()) << " x "
-                  << static_cast<unsigned int>(fp::Maze::getMazeHeight())
+                  << static_cast<unsigned int>(fp::Maze::WIDTH) << " x "
+                  << static_cast<unsigned int>(fp::Maze::HEIGHT)
                   << " maze, but actual maze size is "
                   << fp::API::mazeWidth() << " x "
                   << fp::API::mazeHeight() << std::endl;
@@ -49,14 +49,14 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         
         // If requested, reset the robot state and undo cell wall info
         if (fp::API::wasReset()) {
-            reset();
+            reset(robot);
         }
         
         // If current position equals any of the goal positions, SUCCESS
-        if ( ( (robot_x==fp::Maze::getCLLX() && robot_y==fp::Maze::getCLLY()) || (robot_x==fp::Maze::getCLLX() && robot_y==fp::Maze::getCURY()) 
-                || (robot_x==fp::Maze::getCURX() && robot_y==fp::Maze::getCURY()) || (robot_x==fp::Maze::getCURX() && robot_y==fp::Maze::getCLLY()) ) {
+        if ( ( (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CLLY) || (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CURY) 
+                || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CURY) || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CLLY) ) {
             std::cerr << "Success!" << std::endl;
-            reset();
+            reset(robot);
             break;
         }
         
@@ -93,7 +93,7 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             fp::API::moveForward();
             robot.moveForward();
             robot_y = robot.getY();
-            // Update History after move
+            // Move the tail pointer to point to new cell in History after move to new cell in maze
             History::move();
             continue;
         }
@@ -180,7 +180,7 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         // we need to set the robot in that direction (turning from West to "proper direction"), and finally move
         // the robot forward and return to the top of the while loop
         twobyte current_cell_and_data = History::pop();
-        byte current_cell = current_cell_and_data >> 8;
+        byte current_cell = History::cell(current_cell_and_data);
         twobyte previous_cell_and_data = History::pop();
         byte previous_cell = History::cell(previous_cell_and_data);
         // Check if current x coordinate is less than previous x coordinate (current cell is WEST of previous cell)
@@ -217,8 +217,8 @@ void fp::Algorithm::Solve(std::shared_ptr<fp::LandBasedRobot> robot) {
 }
 
 void fp::Algorithm::colorCenter(char color) {
-    for (byte x = fp::Maze::getCLLX(); x <= fp::Maze::getCURX(); x += 1) {
-        for (byte y = fp::Maze::getCLLY(); y <= fp::Maze::getCURY(); y += 1) {
+    for (byte x = fp::Maze::CLLX; x <= fp::Maze::CURX; x += 1) {
+        for (byte y = fp::Maze::CLLY; y <= fp::Maze::CURY; y += 1) {
             fp::API::setColor(x, y, color);
         }
     }
@@ -226,7 +226,7 @@ void fp::Algorithm::colorCenter(char color) {
 
 void fp::Algorithm::setCellWall(bool isWall) {
     byte cell = fp::Maze::getCell(robot_x, robot_y);
-    byte data = History::;
+    byte data = fp::Maze::m_data[cell];
     fp::Maze::setWall(robot_x, robot_y, robot_d, isWall);
     static char directionChars[] = {'n', 'e', 's', 'w'};
     if ( isWall ) {
@@ -238,7 +238,7 @@ void fp::Algorithm::setCellWall(bool isWall) {
     History::add(cell, data);
 }
 
-void fp::Algorithm::reset() {
+void fp::Algorithm::reset(std::shared_ptr<fp::LandBasedRobot> robot) {
 
     // Acknowledge that the button was pressed
     fp::API::ackReset();
