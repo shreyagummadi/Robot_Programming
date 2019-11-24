@@ -1,21 +1,30 @@
 #pragma once
 
-#include "../Byte.h"
-#include "../Direction.h"
+#include "byte.h"
+#include "direction.h"
 
 namespace fp {
+    
+class Maze {
 
-struct Info {
-    // The distance of the cell from the source (no units)
-    twobyte distance;
-    // bit 0 is whether or not the cell has been discovered
-    // bit 1 is whether or not the cell has a "next" cell
-    // bits 2 - 3 are the direction of the "next" cell
-    // bits 4 - 7 are the straightaway length
-    byte misc;
-};
+    public:
+    // Helper methods for converting between xy coordinates
+    // and the maze index of the cell in the data array
+    static byte getX(byte cell);
+    static byte getY(byte cell);
+    static byte getCell(byte x, byte y);
 
-struct Maze {
+    // Helper methods for querying and updating maze data
+    static bool isKnown(byte x, byte y, byte direction);
+    static bool isWall(byte x, byte y, byte direction);
+    static void setWall(byte x, byte y, byte direction, bool isWall);
+    static void clearWall(byte x, byte y, byte direction);
+    static bool isKnown(byte cell, byte direction);
+    static bool isWall(byte cell, byte direction);
+    static void setWall(byte cell, byte direction, bool isWall);
+    static void clearWall(byte cell, byte direction);
+
+    protected:
 
     // The width and height of the maze, as understood
     // by the algorithm, both of which must be in [1, 16]
@@ -42,37 +51,6 @@ struct Maze {
     //      
     static byte m_data[WIDTH * HEIGHT];
 
-    // Helper methods for converting between xy coordinates
-    // and the maze index of the cell in the data array
-    static byte getX(byte cell);
-    static byte getY(byte cell);
-    static byte getCell(byte x, byte y);
+};
 
-    // Helper methods for querying and updating maze data
-    static bool isKnown(byte x, byte y, byte direction);
-    static bool isWall(byte x, byte y, byte direction);
-    static void setWall(byte x, byte y, byte direction, bool isWall);
-    static void clearWall(byte x, byte y, byte direction);
-    static bool isKnown(byte cell, byte direction);
-    static bool isWall(byte cell, byte direction);
-    static void setWall(byte cell, byte direction, bool isWall);
-    static void clearWall(byte cell, byte direction);
-
-    // Information used only by Dijkstra's algo to determine the fastest path
-    static Info m_info[WIDTH * HEIGHT];
-
-    // Helper methods for accessing and modifying m_info
-    static twobyte getDistance(byte cell);
-    static void setDistance(byte cell, twobyte distance);
-    static bool getDiscovered(byte cell);
-    static void setDiscovered(byte cell, bool discovered);
-    static bool hasNext(byte cell);
-    static void clearNext(byte cell);
-    static byte getNextDirection(byte cell);
-    static void setNextDirection(byte cell, byte nextDirection);
-    static byte getStraightAwayLength(byte cell);
-    static void setStraightAwayLength(byte cell, byte straightAwayLength);
-
-};//--class Maze
-
-}//--namespace fp
+}

@@ -1,15 +1,7 @@
 [{
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled/landbasedwheeled.h",
-  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled/landbasedwheeled.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled/landbasedwheeled.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
   "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedRobot/landbasedrobot.cpp",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
   "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedRobot/landbasedrobot.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedRobot/landbasedrobot.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Heap/heap.cpp",
-  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Heap/heap.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Heap/heap.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
   "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/History/history.h",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
@@ -19,21 +11,33 @@
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
   "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/History/history.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/History/history.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Direction.h",
-  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Direction.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Direction.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
   "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/main.cpp",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
   "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/main.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/main.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Byte.h",
+  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Assert.h",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Byte.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Byte.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Assert.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Assert.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Heap/heap.h",
+  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled/landbasedwheeled.h",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Heap/heap.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Heap/heap.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled/landbasedwheeled.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedWheeled/landbasedwheeled.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/byte.h",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/byte.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/byte.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/direction.h",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/direction.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/direction.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.cpp",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
+ }, {
+  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.h",
+  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
+  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }, {
   "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/Maze/maze.cpp",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
@@ -66,12 +70,4 @@
   "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/API/api.cpp",
   "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
   "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/API/api.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/API/api.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.cpp",
-  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.cpp -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.cpp.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
- }, {
-  "file": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.h",
-  "directory": "/home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11",
-  "command": "clang  -c /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.h -o /home/ts/UMD/Cu_Ag_Au/FinalProject/Final-Project-Group11/src/LandBasedTracked/landbasedtracked.h.o  -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include -I. -I. -Isrc/LandBasedRobot -Isrc/LandBasedTracked -Isrc/LandBasedWheeled  -Wmain  -std=c++14  -Wall  -g  -O0  -Wall"
  }]

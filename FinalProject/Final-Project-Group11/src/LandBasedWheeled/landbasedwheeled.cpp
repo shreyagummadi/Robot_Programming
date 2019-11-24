@@ -1,5 +1,4 @@
 #include "landbasedwheeled.h"
-#include "../API/api.h"
 #include <iostream>
 
 
@@ -19,24 +18,22 @@ char fp::LandBasedWheeled::GetDirection(){
 // Move the robot forward in the maze
 void fp::LandBasedWheeled::MoveForward(){
     std::cout << "LandBasedWheeled::MoveForward is called\n";
-//    fp::API::moveForward();
     char direction = LandBasedRobot::get_direction();
-    double speed = LandBasedRobot::get_speed();
     switch (direction){
         case 'N':
-            LandBasedRobot::set_y(y_ + 1*speed);
+            LandBasedRobot::set_y(y_);
             std::cout << "case N" << std::endl;
             break;
         case 'E':
-            LandBasedRobot::set_x(x_ + 1*speed);
+            LandBasedRobot::set_x(x_);
             std::cout << "case E" << std::endl;
             break;
         case 'S':
-            LandBasedRobot::set_y(y_ - 1*speed);
+            LandBasedRobot::set_y(y_);
             std::cout << "case S" << std::endl;
             break;
         case 'W':
-            LandBasedRobot::set_x(x_ - 1*speed);
+            LandBasedRobot::set_x(x_);
             std::cout << "case W" << std::endl;
             break;
         default:
@@ -47,7 +44,6 @@ void fp::LandBasedWheeled::MoveForward(){
 // Rotate the robot 90 degrees counter-clockwise
 void fp::LandBasedWheeled::TurnLeft(){
     std::cout << "LandBasedWheeled::TurnLeft is called\n";
-//    fp::API::turnLeft();
     char direction = LandBasedRobot::get_direction();
     switch (direction){
         case 'N':
@@ -74,7 +70,6 @@ void fp::LandBasedWheeled::TurnLeft(){
 // Rotate the robot 90 degrees clockwise
 void fp::LandBasedWheeled::TurnRight(){
     std::cout << "LandBasedWheeled::TurnRight is called\n";
-//    fp::API::turnRight();
     char direction = LandBasedRobot::get_direction();
     switch (direction){
         case 'N':

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Byte.h"
+#include "Byte.h"
 
 class History {
 
@@ -26,7 +26,7 @@ public:
 private:
 
     // The maximum number of moves/cells remembered by the History class
-    static const byte CAPACITY = 16;
+    static const byte CAPACITY = 256;
 
     // The total number of moves currently remembered by the History class.
     // It's value is essentially max(CAPACITY, count(move()) - count(pop())).
