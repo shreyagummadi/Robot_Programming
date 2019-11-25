@@ -3,8 +3,12 @@
 
 byte History::m_size = 0;
 byte History::m_tail = 0;
-bool History::m_infoAdded = false;
+//bool History::m_infoAdded = false;
 twobyte History::m_data[] = {0};
+
+bool History::travelled(byte direction) {
+    return (m_data[m_tail-1] >> 8 >> (direction + 6)) & 1;
+}
 
 byte History::size() {
     return m_size;
@@ -12,14 +16,14 @@ byte History::size() {
 
 void History::add(byte cell, byte data) {
     m_data[m_tail] = cell << 8 | data;
-    m_infoAdded = true;
+//    m_infoAdded = true;
 }
 
 void History::move() {
-    if (!m_infoAdded) {
-        m_data[m_tail] = 0;
-    }
-    m_infoAdded = false;
+//    if (!m_infoAdded) {
+//        m_data[m_tail] = 0;
+//    }
+//    m_infoAdded = false;
     m_tail = (m_tail + 1) % CAPACITY;
     if (m_size < CAPACITY) {
         m_size += 1; 

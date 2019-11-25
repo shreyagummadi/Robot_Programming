@@ -23,9 +23,9 @@
 */
 
 
-#include "../Algorithm/algorithm.h"
-#include "../LandBasedTracked/landbasedtracked.h"
-#include "../LandBasedWheeled/landbasedwheeled.h"
+#include "src/Algorithm/algorithm.h"
+#include "src/LandBasedTracked/landbasedtracked.h"
+#include "src/LandBasedWheeled/landbasedwheeled.h"
 
 #include <memory>
 #include <vector>
@@ -40,8 +40,10 @@
 
 int main(){
     std::shared_ptr<fp::LandBasedRobot> wheeled = std::make_shared<fp::LandBasedWheeled>("Husky");
-    
+    std::cerr << "Shared Pointer to LandBasedWheeled object created" << std::endl;
     fp::Algorithm algo;
+    std::cerr << "algorithm object 'algo' created" << std::endl;
+    std::cerr << "calling solve method" << std::endl;
     algo.solve(wheeled);
     return 0;
 }

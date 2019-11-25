@@ -16,8 +16,6 @@ class Algorithm {
         
         void solve(std::shared_ptr<LandBasedRobot> robot);
         
-    protected:
-        
         void colorCenter(char color);
         void setCellWall(bool isWall);
         void reset(std::shared_ptr<LandBasedRobot> robot);

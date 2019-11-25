@@ -40,6 +40,10 @@ bool Maze::isWall(byte cell, byte direction) {
     return (m_data[cell] >> direction) & 1;
 }
 
+void Maze::resetKnown(byte cell, byte direction) {
+    m_data[cell] |= 1 << (((direction + 2) % 4)+4);
+}
+
 void Maze::setWall(byte cell, byte direction, bool isWall) {
     m_data[cell] |= 1 << (direction + 4);
     m_data[cell] =

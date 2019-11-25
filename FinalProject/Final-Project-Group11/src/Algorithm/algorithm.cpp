@@ -9,7 +9,8 @@
 
 
 void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
-     // Ensure that the maze size is sane
+    std::cerr << "solve method entered..." << std::endl;
+    // Ensure that the maze size is sane
     if (!(
         1 <= fp::Maze::WIDTH &&
         1 <= fp::Maze::HEIGHT &&
@@ -20,7 +21,7 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
                   << std::endl;
         return;
     }
-
+    
     // Ensure that the maze size is as expected
     if (!(
         fp::Maze::WIDTH == fp::API::mazeWidth() &&
@@ -33,25 +34,28 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
                   << fp::API::mazeWidth() << " x "
                   << fp::API::mazeHeight() << std::endl;
     }
-
+    std::cerr << "Initializing robot..." << std::endl;
     // Initialize the robot
     robot_x = robot->getX();
     robot_y = robot->getY();
     robot_d = Direction::NORTH;
     bool isWall = false;
     
+    std::cerr << "clearing maze tile colors and setting goal color to green..." << std::endl;
+    // Clear all tile color, and color the center
+    fp::API::clearAllColor();
+    colorCenter('G');
+    
+    std::cerr << "entering main while loop..." << std::endl;
     while (true) {
-        
-        // Clear all tile color, and color the center
-        fp::API::clearAllColor();
-        fp::API::setColor(0, 0, 'G');
-        colorCenter('G');
-        
+        std::cerr << "top of the main while loop reached..." << std::endl;
+        std::cerr << "x: " << static_cast<unsigned int>(robot_x) << "   y: " << static_cast<unsigned int>(robot_y) << "   Direction: " << static_cast<unsigned int>(robot_d) << std::endl;
+        std::cerr << "x: " << static_cast<unsigned int>(robot->getX()) << "   y: " << static_cast<unsigned int>(robot->getY()) << "   Direction: " << robot->getDirection() << std::endl;
         // If requested, reset the robot state and undo cell wall info
         if (fp::API::wasReset()) {
             reset(robot);
         }
-        
+        std::cerr << "checking if robot reached goal position..." << std::endl;
         // If current position equals any of the goal positions, SUCCESS
         if ( ( (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CLLY) || (robot_x==fp::Maze::CLLX && robot_y==fp::Maze::CURY)
         || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CURY) || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CLLY) ) ){
@@ -59,10 +63,11 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             reset(robot);
             break;
         }
-        
+        std::cerr << "sorry not yet, beginning algorithm..." << std::endl;
         // Need to look for a southern wall first so need to make sure the robot is facing south
         switch ( robot->getDirection() ){
             case 'N':
+                std::cerr << "turning from NORTH to SOUTH..." << std::endl;
                 fp::API::turnRight();
                 robot->turnRight();
                 fp::API::turnRight();
@@ -70,11 +75,13 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
                 robot_d = Direction::SOUTH;
                 break;
             case 'E':
+                std::cerr << "turning from EAST to SOUTH..." << std::endl;
                 fp::API::turnRight();
                 robot->turnRight();
                 robot_d = Direction::SOUTH;
                 break;
             case 'W':
+                std::cerr << "turning from WEST to SOUTH..." << std::endl;
                 fp::API::turnLeft();
                 robot->turnLeft();
                 robot_d = Direction::SOUTH;
@@ -82,109 +89,149 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             default:
                 break;
         }
-        
+        std::cerr << "isKnown: " << fp::Maze::isKnown(robot_x, robot_y, robot_d) << std::endl;
+        std::cerr << "cell: " << static_cast<unsigned int>(fp::Maze::getCell(robot_x, robot_y)) << std::endl;
+        std::cerr << "m_data at cell: " << static_cast<unsigned int>(fp::Maze::m_data[fp::Maze::getCell(robot_x, robot_y)]) << std::endl;
         //Go South if no walls and not previously travelled
-        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+        std::cerr << "checking for Southern wall (and that it hasn't been previously travelled)..." << std::endl;
+        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) && !(History::travelled(robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
+            std::cerr << "no southern wall found... moving the robot one cell SOUTH" << std::endl;
             isWall = false;
             setCellWall(isWall);
+            std::cerr << static_cast<unsigned int>(fp::Maze::getCell(robot_x, robot_y)) << std::endl;
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
-            robot_y = robot->getY();
+            robot_y -= 1;
             // Move the tail pointer to point to new cell in History after move to new cell in maze
+            std::cerr << "moving the tail pointer to point to the next cell in History stack"<< std::endl;
             History::move();
+            std::cerr << static_cast<unsigned int>(fp::Maze::getCell(robot_x, robot_y)) << std::endl;
+            //reset known data (properly)
+            fp::Maze::resetKnown(fp::Maze::getCell(robot_x, robot_y), robot_d);
+            // Return back to the top of the while loop
             continue;
         }
         // Set wall if wall and not known
+        std::cerr << "double checking for southern wall (and that it isn't known)" << std::endl;
         if ( fp::API::wallFront() && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+            std::cerr << "found a southern wall... setting wall..." << std::endl;
             isWall = true;
             setCellWall(isWall);
         }
         
+        std::cerr << "turning EAST..." << std::endl;
         fp::API::turnLeft();
         robot->turnLeft();
         robot_d = Direction::EAST;
-        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+        std::cerr << "checking for Eastern wall (and that it hasn't been previously travelled)..." << std::endl;
+        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) && !(History::travelled(robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
+            std::cerr << "no Eastern wall found... moving the robot one cell EAST" << std::endl;
             isWall = false;
             setCellWall(isWall);
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
-            robot_x = robot->getX();
+            robot_x += 1;
             // Update History after move
+            std::cerr << "moving the tail pointer to point to the next cell in History stack"<< std::endl;
             History::move();
+            //reset known data (properly)
+            fp::Maze::resetKnown(fp::Maze::getCell(robot_x, robot_y), robot_d);
             // Return back to the top of the while loop
             continue;
         }
         // Set wall if wall and not known
+        std::cerr << "double checking for eastern wall (and that it isn't known)" << std::endl;
         if ( fp::API::wallFront() && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+            std::cerr << "found an eastern wall... setting wall..." << std::endl;
             isWall = true;
             setCellWall(isWall);
         }
         
+        std::cerr << "turning NORTH..." << std::endl;
         fp::API::turnLeft();
         robot->turnLeft();
         robot_d = Direction::NORTH;
-        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+        std::cerr << "checking for Northern wall (and that it hasn't been previously travelled)..." << std::endl;
+        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) && !(History::travelled(robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
+            std::cerr << "no Northern wall found... moving the robot one cell NORTH" << std::endl;
             isWall = false;
             setCellWall(isWall);
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
-            robot_y = robot->getY();
+            robot_y += 1;
             // Update history after move
+            std::cerr << "moving the tail pointer to point to the next cell in History stack"<< std::endl;
             History::move();
+            //reset known data (properly)
+            fp::Maze::resetKnown(fp::Maze::getCell(robot_x, robot_y), robot_d);
             // Return back to the top of the while loop
             continue;
         }
         // Set wall if wall and not known
+        std::cerr << "double checking for northern wall (and that it isn't known)" << std::endl;
         if ( fp::API::wallFront() && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+            std::cerr << "found an northern wall... setting wall..." << std::endl;
             isWall = true;
             setCellWall(isWall);
         }
         
+        std::cerr << "turning WEST..." << std::endl;
         fp::API::turnLeft();
         robot->turnLeft();
         robot_d = Direction::WEST;
-        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+        std::cerr << "checking for Western wall (and that it hasn't been previously travelled)..." << std::endl;
+        if ( !(fp::API::wallFront()) && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) && !(History::travelled(robot_d)) ) {
             // Commit to memory that the robot learned that no wall exists in this direction
+            std::cerr << "no Western wall found... moving the robot one cell WEST" << std::endl;
             isWall = false;
             setCellWall(isWall);
             // Move robot forward
             fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
-            robot_y = robot->getY();
+            robot_x -= 1;
             // Update history after move
+            std::cerr << "moving the tail pointer to point to the next cell in History stack"<< std::endl;
             History::move();
+            //reset known data (properly)
+            fp::Maze::resetKnown(fp::Maze::getCell(robot_x, robot_y), robot_d);
             // Return back to the top of the while loop
             continue;
         }
         // Set wall if wall and not known
+        std::cerr << "double checking for western wall (and that it isn't known)" << std::endl;
         if ( fp::API::wallFront() && !(fp::Maze::isKnown(robot_x, robot_y, robot_d)) ) {
+            std::cerr << "found a western wall... setting wall..." << std::endl;
             isWall = true;
             setCellWall(isWall);
         }
         
+        std::cerr << "no path found at current cell... clearing cell color..." << std::endl;
         fp::API::clearColor(robot_x, robot_y);
         
         // Retreat robot one cell... to do this we have to compare the x and y coordinates of the current cell
         // with the previous cell (by popping it from History to give us access to the previous cell, which then needs to be popped), then
         // we need to set the robot in that direction (turning from West to "proper direction"), and finally move
         // the robot forward and return to the top of the while loop
-        twobyte current_cell_and_data = History::pop();
-        byte current_cell = History::cell(current_cell_and_data);
+        std::cerr << "getting current cell..." << std::endl;
+        byte current_cell =fp::Maze::getCell(robot_x, robot_y);
+        std::cerr << "popping previous cell from History stack..." << std::endl;
         twobyte previous_cell_and_data = History::pop();
         byte previous_cell = History::cell(previous_cell_and_data);
+        std::cerr << "comparing current position with previous position to determine which way to retreat..." << std::endl;
         // Check if current x coordinate is less than previous x coordinate (current cell is WEST of previous cell)
         // and turn 180 degrees around (turn from WEST to EAST)
-        if ( (current_cell >> 4) < (previous_cell >> 4) ) {
+        if ( fp::Maze::getX(current_cell) < (previous_cell >> 4) ) {
+            std::cerr << "current position is WEST of previous position... turning WEST to EAST..." << std::endl;
             fp::API::turnRight();
             robot->turnRight();
             fp::API::turnRight();
@@ -193,21 +240,22 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         }
         // Check if current y coordinate is less than previous y coordinate (current cell is SOUTH of previous cell)
         // and turn -90 degrees around (turn from WEST to NORTH)
-        if ( (current_cell &= 16) < (previous_cell &= 16) ) {
+        if ( fp::Maze::getY(current_cell) < (previous_cell &= 15) ) {
+            std::cerr << "current position is SOUTH of previous position... turning WEST to NORTH..." << std::endl;
             fp::API::turnRight();
             robot->turnRight();
             robot_d = Direction::NORTH;
         }
         // Check if current y coordinate is greater than previous y coordinate (current cell is NORTH of previous cell)
         // and turn 90 degrees around (turn from WEST to SOUTH)
-        if ( (current_cell &= 16) > (previous_cell &= 16) ) {
+        if ( fp::Maze::getY(current_cell) > (previous_cell &= 15) ) {
+            std::cerr << "current position is NORTH of previous position... turning WEST to SOUTH..." << std::endl;
             fp::API::turnLeft();
             robot->turnLeft();
             robot_d = Direction::SOUTH;
         }
-        // Don't need to check for case where current cell is EAST of previous cell because robot is already facing WEST in the algorithm
-        
         // Move robot forward
+        std::cerr << "(retreating) moving robot forward one cell..." << std::endl;
         fp::API::moveForward();
         robot->moveForward();
         robot_x = robot->getX();
@@ -226,15 +274,13 @@ void fp::Algorithm::colorCenter(char color) {
 
 void fp::Algorithm::setCellWall(bool isWall) {
     byte cell = fp::Maze::getCell(robot_x, robot_y);
-    byte data = fp::Maze::m_data[cell];
     fp::Maze::setWall(robot_x, robot_y, robot_d, isWall);
+    byte data = fp::Maze::m_data[cell];
     static char directionChars[] = {'n', 'e', 's', 'w'};
     if ( isWall ) {
         API::setWall(robot_x, robot_y, directionChars[robot_d]);
-        data |= 1 << (robot_d + 4);
-        data |= 1 << robot_d;
     }
-    
+    std::cerr << "adding cell and cell wall data to History" << std::endl;
     History::add(cell, data);
 }
 

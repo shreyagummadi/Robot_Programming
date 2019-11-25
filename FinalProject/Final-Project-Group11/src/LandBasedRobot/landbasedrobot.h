@@ -30,7 +30,7 @@ class LandBasedRobot{
     
     //---Destructor---	
     	virtual ~LandBasedRobot(){
-//        std::cout << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
+        std::cerr << "LandBasedRobot::~LandBasedRobot() is called" << std::endl;
         }
 
 /**
@@ -55,9 +55,11 @@ class LandBasedRobot{
             return name_;
         }
         int getX() const{
+//            std::cout << "LandBasedRobot::getX() called" << std::endl;
             return x_;
         }
         int getY() const{
+//            std::cout << "LandBasedRobot::getY() called" << std::endl;
             return y_;
         }
         double getSpeed() const{
@@ -76,6 +78,7 @@ class LandBasedRobot{
             return capacity_;
         }
         char getDirection() const{
+//            std::cout << "LandBasedRobot::getDirection() called" << std::endl;
             return direction_;
         }
         
@@ -84,9 +87,11 @@ class LandBasedRobot{
             name_= name;
         }
         void setX(int x){
+//            std::cout << "LandBasedRobot::setX() called" << std::endl;
             x_= x;
         }
         void setY(int y){
+//            std::cout << "LandBasedRobot::setY() called" << std::endl;
             y_= y;
         }
         void setSpeed(double speed){
@@ -105,6 +110,7 @@ class LandBasedRobot{
             capacity_= capacity;
         }
         void setDirection(char direction){
+//            std::cout << "LandBasedRobot::setDirection() called" << std::endl;
             direction_= direction;
         }
 

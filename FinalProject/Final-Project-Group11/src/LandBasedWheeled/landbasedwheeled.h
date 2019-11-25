@@ -30,7 +30,7 @@ class LandBasedWheeled : public LandBasedRobot{
 
     //---Derived Class Destructor---
     	virtual ~LandBasedWheeled(){
-//            std::cout << "LandBasedWheeled::~LandBasedWheeled() Derived Class Destructor is called" << std::endl;
+            std::cerr << "LandBasedWheeled::~LandBasedWheeled() Derived Class Destructor is called" << std::endl;
 //            delete wheel_type;//free allocated space on the heap created by new
     }
 

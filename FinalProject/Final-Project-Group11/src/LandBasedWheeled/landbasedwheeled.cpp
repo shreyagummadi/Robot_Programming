@@ -17,19 +17,19 @@ void fp::LandBasedWheeled::moveForward(){
     char direction = LandBasedRobot::getDirection();
     switch (direction){
         case 'N':
-            LandBasedRobot::setY(y_);
+            LandBasedRobot::setY(y_+1);
 //            std::cout << "case N" << std::endl;
             break;
         case 'E':
-            LandBasedRobot::setX(x_);
+            LandBasedRobot::setX(x_+1);
 //            std::cout << "case E" << std::endl;
             break;
         case 'S':
-            LandBasedRobot::setY(y_);
+            LandBasedRobot::setY(y_-1);
 //            std::cout << "case S" << std::endl;
             break;
         case 'W':
-            LandBasedRobot::setY(x_);
+            LandBasedRobot::setY(x_-1);
 //            std::cout << "case W" << std::endl;
             break;
         default:
@@ -93,7 +93,7 @@ void fp::LandBasedWheeled::turnRight(){
 //----Derived class constructor definition----
 fp::LandBasedWheeled::LandBasedWheeled(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction)
     	: LandBasedRobot(name, x, y, speed, width, length, height, capacity, direction){
-//        std::cout << "LandBasedWheeled::LandBasedWheeled() Derived class constructor is called" << std::endl;
+        std::cerr << "LandBasedWheeled::LandBasedWheeled() Derived class constructor is called" << std::endl;
 //        wheel_type = new std::string;//dynamically allocate space on the heap for std::string data type
 //        *wheel_type = "";//initialize pointer
 }
@@ -101,7 +101,7 @@ fp::LandBasedWheeled::LandBasedWheeled(std::string name, int x, int y, double sp
 //----Derived Class Copy Constructor definition----
 fp::LandBasedWheeled::LandBasedWheeled(const LandBasedWheeled &source)
     	: LandBasedRobot(source){
-//        std::cout << "LandBasedWheeled::LandBasedWheeled() copy constructor is called" << std::endl;
+        std::cerr << "LandBasedWheeled::LandBasedWheeled() copy constructor is called" << std::endl;
 //        wheel_type = new std::string;//dynamically allocate space on the heap for std::string data type
 //        *wheel_type = *source.wheel_type;//copy value of pointer attribute
         wheel_number = source.wheel_number;//copy value of wheel_number

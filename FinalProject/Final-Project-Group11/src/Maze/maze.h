@@ -40,6 +40,7 @@ struct Maze {
     // Helper methods for querying and updating maze data
     static bool isKnown(byte x, byte y, byte direction);
     static bool isWall(byte x, byte y, byte direction);
+    static void resetKnown(byte cell, byte direction);
     static void setWall(byte x, byte y, byte direction, bool isWall);
     static void clearWall(byte x, byte y, byte direction);
     static bool isKnown(byte cell, byte direction);

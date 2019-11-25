@@ -22,7 +22,7 @@ public:
     static twobyte pop();
     static byte cell(twobyte cellAndData);
     static byte data(twobyte cellAndData);
-
+    static bool travelled(byte direction);
 private:
 
     // The maximum number of moves/cells remembered by the History class
@@ -39,7 +39,7 @@ private:
     // Whether or not add() has been called following the most recent call to
     // move(), which helps us to decide whether or not to explicitly overwrite
     // some data the next time that move() is called.
-    static bool m_infoAdded;
+//    static bool m_infoAdded;
 
     // One byte for the x and y position of the cell, and one byte for whether
     // or not we learned of any walls, and what wall values we actually learned

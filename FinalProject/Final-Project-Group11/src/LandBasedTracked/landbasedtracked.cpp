@@ -10,19 +10,19 @@ void fp::LandBasedTracked::moveForward(){
     char direction = LandBasedRobot::getDirection();
     switch (direction){
         case 'N':
-            LandBasedRobot::setY(y_);
+            LandBasedRobot::setY(y_+1);
 //            std::cout << "case N" << std::endl;
             break;
         case 'E':
-            LandBasedRobot::setX(x_);
+            LandBasedRobot::setX(x_+1);
 //            std::cout << "case E" << std::endl;
             break;
         case 'S':
-            LandBasedRobot::setY(y_);
+            LandBasedRobot::setY(y_-1);
 //            std::cout << "case S" << std::endl;
             break;
         case 'W':
-            LandBasedRobot::setX(x_);
+            LandBasedRobot::setX(x_-1);
 //            std::cout << "case W" << std::endl;
             break;
         default:
@@ -87,7 +87,7 @@ void fp::LandBasedTracked::turnRight(){
 
 fp::LandBasedTracked::LandBasedTracked(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction)
     : LandBasedRobot(name, x, y, speed, width, length, height, capacity, direction){
-//        std::cout << "LandBasedTracked()::LandBasedTacked() Derived class constructor is called" << std::endl;
+        std::cerr << "LandBasedTracked::LandBasedTacked() Derived class constructor is called" << std::endl;
 //        track_type = new std::string;//dynamically allocate space on the heap for std::string data type
 //        *track_type = "";//initialize pointer
     } 
@@ -95,7 +95,7 @@ fp::LandBasedTracked::LandBasedTracked(std::string name, int x, int y, double sp
    
 fp::LandBasedTracked::LandBasedTracked(const LandBasedTracked &source)
     : LandBasedRobot(source){
-//        std::cout << "LandBasedTracked() copy constructor is called" << std::endl;
+        std::cerr << "LandBasedTracked() copy constructor is called" << std::endl;
 //        track_type = new std::string;//dynamically allocate space on the heap for std::string data type
 //        *track_type = *source.track_type;//copy value of pointer
     }
