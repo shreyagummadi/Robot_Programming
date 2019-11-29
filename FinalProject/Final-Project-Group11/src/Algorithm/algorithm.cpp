@@ -70,6 +70,7 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CURY) || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CLLY) ) ){
             std::cerr << "Success!" << std::endl;
             reset(robot, path_vector);
+            drawPath(path_vector);
             break;
         }
         std::cerr << "sorry not yet, beginning algorithm..." << std::endl;
@@ -107,7 +108,6 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             isWall = false;
             setCellWall(isWall);            
             // Move robot forward
-            fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
             robot_y -= 1;
@@ -137,7 +137,6 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             isWall = false;
             setCellWall(isWall);
             // Move robot forward
-            fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
             robot_x += 1;
@@ -167,7 +166,6 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             isWall = false;
             setCellWall(isWall);
             // Move robot forward
-            fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
             robot_y += 1;
@@ -200,7 +198,6 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             isWall = false;
             setCellWall(isWall);
             // Move robot forward
-            fp::API::setColor(robot_x, robot_y, 'Y');
             fp::API::moveForward();
             robot->moveForward();
             robot_x -= 1;
@@ -219,8 +216,7 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
             setCellWall(isWall);
         }
         
-        std::cerr << "no path found at current cell... clearing cell color..." << std::endl;
-        fp::API::clearColor(robot_x, robot_y);
+        std::cerr << "no path found at current cell..." << std::endl;
         
         // Retreat robot one cell... to do this we have to compare the x and y coordinates of the current cell
         // with the previous cell, then we need to set the robot in that direction (turning from West to "proper" direction)
@@ -342,4 +338,12 @@ void fp::Algorithm::reset(std::shared_ptr<fp::LandBasedRobot> robot, std::vector
         cell++;
     }
     fp::API::clearAllColor();
+}
+
+void fp::Algorithm::drawPath(std::vector<byte> path_vector){
+    for (int i = 0; i<path_vector.size(); i++) {
+        byte x = path_vector.at(i)>>4;
+        byte y = path_vector.at(i) & 15;
+        fp::API::setColor(x, y, 'Y');
+    }
 }
