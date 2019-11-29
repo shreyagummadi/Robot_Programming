@@ -70,6 +70,7 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CURY) || (robot_x==fp::Maze::CURX && robot_y==fp::Maze::CLLY) ) ){
             std::cerr << "Success!" << std::endl;
             reset(robot, path_vector);
+            drawPath(path_vector);
             break;
         }
         std::cerr << "sorry not yet, beginning algorithm..." << std::endl;
@@ -342,4 +343,12 @@ void fp::Algorithm::reset(std::shared_ptr<fp::LandBasedRobot> robot, std::vector
         cell++;
     }
     fp::API::clearAllColor();
+}
+
+void fp::Algorithm::drawPath(std::vector<byte> path_vector){
+    for (int i = 0; i<path_vector.size(); i++) {
+        byte x = path_vector.at(i)>>4;
+        byte y = path_vector.at(i) & 15;
+        fp::API::setColor(x, y, 'Y');
+    }
 }
