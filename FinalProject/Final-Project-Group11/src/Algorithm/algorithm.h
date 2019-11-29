@@ -6,6 +6,7 @@
 #include "../LandBasedRobot/landbasedrobot.h"
 
 #include <memory>
+#include <vector>
 
 
 namespace fp {
@@ -18,7 +19,7 @@ class Algorithm {
         
         void colorCenter(char color);
         void setCellWall(bool isWall);
-        void reset(std::shared_ptr<LandBasedRobot> robot);
+        void reset(std::shared_ptr<LandBasedRobot> robot, std::vector<byte> path_vector);
         byte robot_x; // X position of the robot
         byte robot_y; // Y position of the robot
         byte robot_d; // Direction of the robot
