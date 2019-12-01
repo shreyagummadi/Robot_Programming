@@ -33,17 +33,24 @@
 #include <string>
 
 /**
-* @brief The program will run methods to solve the maze, generate a path from strat to goal, and drive one of the two robot to follow the path and navigate a maze from an specific position in the maze (the starting position) to reach another position in the maze (the goal position).
+* @brief The program will run methods to create a shared pointer to a LandBasedRobot object (LandBasedWheeled or LandBasedTracked type robot), which
+* will be sent to the solve method in order to navigate one of the two robot types through the maze from the starting position to the goal position
+* using the DFS (Depth First Search) algorithm. This program is intended to be compiled and ran inside the mms (micro mouse simulator) created by mackorone
+* For instructions on how to run and build see the README.md associated with this program along with the instructions contained on mackorone's github
+* page at https://github.com/mackorone/mms/blob/master/README.md .
 * @author Raghav Agarwal <ragarwal@terpmail.umd.edu> Diego Camargo <camargo1@terpmail.umd.edu> Shreya Gummadi <shreyagummadi@gmail.com> Revati Naik <revatin@umd.edu> Akshitha Pothamshetty <apothams@terpmail.umd.edu> Thomas Sullivan <Tsulliv5@umd.edu>
 */
 
 
 int main(){
+    // Create the shared pointer, "wheeled", which points to a LandBasedWheeled type robot initialized with the name parameter, "Husky".
     std::shared_ptr<fp::LandBasedRobot> wheeled = std::make_shared<fp::LandBasedWheeled>("Husky");
-    std::cerr << "Shared Pointer to LandBasedWheeled object created" << std::endl;
+    std::cerr << "Shared Pointer to LandBasedRobot object created" << std::endl;
+    // Create Algorithm type object, "algo".
     fp::Algorithm algo;
-    std::cerr << "algorithm object 'algo' created" << std::endl;
     std::cerr << "calling solve method" << std::endl;
+    // Call the solve method on algo with the pointer to robot object parameter, "wheeled", which will handle navigating the robot through the maze
+    // using the DFS algorithm, drawing the appropriate attributes of the maze using the API 
     algo.solve(wheeled);
     return 0;
 }

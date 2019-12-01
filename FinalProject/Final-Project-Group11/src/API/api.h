@@ -8,8 +8,8 @@ class API{
 public:
 
 /**
-* @brief Methods are public and static in class API, and work like functions.
-* @return returns the function being called by the derived class which overrides them.
+* @brief The API class is used to interface with the mms in order to display the walls pof the maze along with the robot at it's current position.
+* A more detailed description of these functions can be found from their source located here: https://github.com/mackorone/mms 
 */
 
 //----Methods Prototypes----

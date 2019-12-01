@@ -30,7 +30,6 @@ class LandBasedTracked : public LandBasedRobot{
     //---Derived Class Destructor---
         virtual ~LandBasedTracked(){
        std::cerr << "LandBasedTracked::~LandBasedTracked() is called" << std::endl;
-//        delete track_type;//free allocated space on the heap created by new pointer
     }
 
 /**

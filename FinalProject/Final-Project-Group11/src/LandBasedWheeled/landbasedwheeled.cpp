@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+/**
+* @brief Derived Class LandBasedWheeled is of type concrete, which is single and public inherits from LandBasedRobot
+* @return returns the attributes, methods, constructor/destructors, and accessors and mutators
+*/
 
 //----Methods Definitions----
 

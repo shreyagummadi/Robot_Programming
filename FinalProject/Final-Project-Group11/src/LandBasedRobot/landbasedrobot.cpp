@@ -4,6 +4,11 @@
 #include <iostream>
 #include <memory>
 
+/**
+* @brief Class LandBasedRobot is the base class which is an abstract type
+* @return returns only the methods that are being called by the derived classes.
+*/
+
 //----Methods Definitions----
 
 //Function for moving the robot forward

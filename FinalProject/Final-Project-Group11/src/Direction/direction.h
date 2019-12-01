@@ -2,6 +2,8 @@
 
 #include "../Byte/byte.h"
 
+// Used by the maze and algorithm classes in order to encode each cardinal direction to a value
+// borrowed from mackorone's mackalgo program: https://github.com/mackorone/mackalgo
 struct Direction {
 
     static const byte NORTH = 0;

@@ -4,6 +4,13 @@
 #include "../Direction/direction.h"
 
 namespace fp {
+    
+/**
+* @brief Maze class stores robot representation of maze, contains methods for modifying, and reading maze attributes
+* borrowed heavily from mackorone's mackalgo program located here: https://github.com/mackorone/mackalgo
+* @return returns the attributes, methods, constructors/destructor, and accessors and mutators of maze class
+*/
+    
 struct Maze {
 
     // The width and height of the maze, as understood
@@ -31,13 +38,13 @@ struct Maze {
     //      
     static byte m_data[WIDTH * HEIGHT];
 
-    // Helper methods for converting between xy coordinates
+    // Methods for converting between xy coordinates
     // and the maze index of the cell in the data array
     static byte getX(byte cell);
     static byte getY(byte cell);
     static byte getCell(byte x, byte y);
 
-    // Helper methods for querying and updating maze data
+    // Methods for querying and updating maze data
     static bool isKnown(byte x, byte y, byte direction);
     static bool isWall(byte x, byte y, byte direction);
     static void resetKnown(byte cell, byte direction);
