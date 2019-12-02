@@ -96,14 +96,10 @@ void fp::LandBasedTracked::turnRight(){
 fp::LandBasedTracked::LandBasedTracked(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction)
     : LandBasedRobot(name, x, y, speed, width, length, height, capacity, direction){
         std::cerr << "LandBasedTracked::LandBasedTacked() Derived class constructor is called" << std::endl;
-//        track_type = new std::string;//dynamically allocate space on the heap for std::string data type
-//        *track_type = "";//initialize pointer
     } 
 //----Derived Class Copy Constructor definition----
    
 fp::LandBasedTracked::LandBasedTracked(const LandBasedTracked &source)
     : LandBasedRobot(source){
         std::cerr << "LandBasedTracked() copy constructor is called" << std::endl;
-//        track_type = new std::string;//dynamically allocate space on the heap for std::string data type
-//        *track_type = *source.track_type;//copy value of pointer
     }
