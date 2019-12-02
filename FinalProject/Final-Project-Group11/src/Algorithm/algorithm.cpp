@@ -249,8 +249,16 @@ void fp::Algorithm::solve(std::shared_ptr<fp::LandBasedRobot> robot) {
         //, and finally move the robot forward and return to the top of the while loop
         std::cerr << "comparing current position with previous position to determine which way to retreat..." << std::endl;
         byte current_cell = fp::Maze::getCell(robot_x, robot_y);
-        int vec_size = path_vector.size(); 
-        // Check if current x coordinate is less than previous x coordinate (current cell is WEST of previous cell)
+        int vec_size = path_vector.size();
+	
+	// Check if maze is unsolvable and quit program
+        if ( vec_size == 1) {
+            std::cerr << "Maze is unsolvable...quitting" << std::endl;
+            reset(robot, path_vector);
+            break;
+        }
+        
+	// Check if current x coordinate is less than previous x coordinate (current cell is WEST of previous cell)
         // and turn 180 degrees around (turn from WEST to EAST)
         std::cerr << "current x: " << static_cast<unsigned int>(robot_x) << "   prev x: "<< static_cast<unsigned int>(path_vector.at(vec_size-2)>>4) << std::endl;
         if ( robot_x < ((path_vector.at(vec_size-2)>>4)) ) {
