@@ -106,15 +106,11 @@ void fp::LandBasedWheeled::turnRight(){
 fp::LandBasedWheeled::LandBasedWheeled(std::string name, int x, int y, double speed, double width, double length, double height, double capacity, char direction)
     	: LandBasedRobot(name, x, y, speed, width, length, height, capacity, direction){
         std::cerr << "LandBasedWheeled::LandBasedWheeled() Derived class constructor is called" << std::endl;
-//        wheel_type = new std::string;//dynamically allocate space on the heap for std::string data type
-//        *wheel_type = "";//initialize pointer
 }
     
 //----Derived Class Copy Constructor definition----
 fp::LandBasedWheeled::LandBasedWheeled(const LandBasedWheeled &source)
     	: LandBasedRobot(source){
         std::cerr << "LandBasedWheeled::LandBasedWheeled() copy constructor is called" << std::endl;
-//        wheel_type = new std::string;//dynamically allocate space on the heap for std::string data type
-//        *wheel_type = *source.wheel_type;//copy value of pointer attribute
         wheel_number = source.wheel_number;//copy value of wheel_number
 }
