@@ -3,9 +3,9 @@
 using namespace fp;
 
 /**
-* @brief Maze class stores robot representation of maze, contains methods for modifying, and reading maze attributes
+* @brief Maze struct stores robot representation of maze, contains functions for modifying, and reading maze variables
 * borrowed heavily from mackorone's mackalgo program located here: https://github.com/mackorone/mackalgo
-* @return returns the attributes, methods, constructors/destructor, and accessors and mutators of maze class
+* @return returns and calls the various functions and variables of the maze struct
 */
 
 // array that holds representation of maze
