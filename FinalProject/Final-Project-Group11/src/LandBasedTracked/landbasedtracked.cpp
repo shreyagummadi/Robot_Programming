@@ -10,28 +10,28 @@ void fp::LandBasedTracked::moveForward(){
     char direction = LandBasedRobot::getDirection();
     switch (direction){
         case 'N':
-            std::cerr << "case N" << std::endl;
-            std::cerr << "y before move: " << getY() << std::endl;
+//            std::cerr << "case N" << std::endl;
+//            std::cerr << "y before move: " << getY() << std::endl;
             LandBasedRobot::setY(y_+1);
-            std::cerr << "y after move: " << getY() << std::endl;
+//            std::cerr << "y after move: " << getY() << std::endl;
             break;
         case 'E':
-            std::cerr << "case E" << std::endl;
-            std::cerr << "x before move: " << getX() << std::endl;
+//            std::cerr << "case E" << std::endl;
+//            std::cerr << "x before move: " << getX() << std::endl;
             LandBasedRobot::setX(x_+1);
-            std::cerr << "x after move: " << getX() << std::endl;
+//            std::cerr << "x after move: " << getX() << std::endl;
             break;
         case 'S':
-            std::cerr << "case S" << std::endl;
-            std::cerr << "y before move: " << getY() << std::endl;
+//            std::cerr << "case S" << std::endl;
+//            std::cerr << "y before move: " << getY() << std::endl;
             LandBasedRobot::setY(y_-1);
-            std::cerr << "y after move: " << getY() << std::endl;
+//            std::cerr << "y after move: " << getY() << std::endl;
             break;
         case 'W':
-            std::cerr << "case W" << std::endl;
-            std::cerr << "x before move: " << getX() << std::endl;
+//            std::cerr << "case W" << std::endl;
+//            std::cerr << "x before move: " << getX() << std::endl;
             LandBasedRobot::setX(x_-1);
-            std::cerr << "x after move: " << getX() << std::endl;
+//            std::cerr << "x after move: " << getX() << std::endl;
             break;
         default:
             break;
