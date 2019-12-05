@@ -1,1 +1,0 @@
-g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp Byte/byte.h Direction/direction.h ../main.cpp
