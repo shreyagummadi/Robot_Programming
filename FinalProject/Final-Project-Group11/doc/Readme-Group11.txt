@@ -29,6 +29,15 @@ landbasedtracked.h
 landbasedtracked.cpp
 landbasedwheeled.h
 landbasedwheeled.cpp
+algorithm.h
+algorithm.cpp
+api.h
+app.cpp
+byte.h
+direction.h
+maze.h
+maze.cpp
+
 
 Overview
 ========
@@ -48,8 +57,8 @@ User Inputs
 In the Micromouse Simulator input the following:
 
 * Name: finalproject
-* Directory: /Desktop/Workspace/Final-Project-Group11/src
-* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Heap/heap.cpp History/history.cpp Algorithm/algorithm.cpp Main/main.cpp
+* Directory: /Desktop/Workspace/FinalProject/Final-Project-Group11/src
+* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp Main/main.cpp
 * Run Command: ./a.out
 
 
@@ -77,9 +86,19 @@ To run the file:
 	-Step 2: In the Micromouse Simulator input the following:
 
 		* Name: finalproject
-		* Directory: /Desktop/Workspace/Final-Project-Group11/src
-		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Heap/heap.cpp History/history.cpp Algorithm/algorithm.cpp Main/main.cpp
+		* Directory: /Desktop/Workspace/FinalProject/Final-Project-Group11/src
+		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp Main/main.cpp
 		* Run Command: ./a.out
+
+To install Micromouse simulator:
+------
+	- git clone https://github.com/mackorone/mms
+	- cd mms/src 
+	- qmake && make
+
+To launch Mircormouse simulator:
+------
+	- ./bin/mms
 
 Maze:
 ------
@@ -109,15 +128,4 @@ algorithms.
 			-interact using build-in methods from mms project with class API
 
 
-Implementation
------
 
-The program has several classes: 
-LandBasedRobot
-LandBasedTracked
-LandBasedWheeled
-Algorithm
-API
-Heap
-History
-Maze
