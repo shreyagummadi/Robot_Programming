@@ -20,21 +20,21 @@ There is one file for this project:
 
 The program consists of the following code files:
 
-main.cpp
-landbasedrobot.h
-landbasedrobot.cpp
-landbasedtracked.h
-landbasedtracked.cpp
-landbasedwheeled.h
-landbasedwheeled.cpp
-algorithm.h
-algorithm.cpp
-api.h
-app.cpp
-byte.h
-direction.h
-maze.h
-maze.cpp
+* main.cpp
+* landbasedrobot.h
+* landbasedrobot.cpp
+* landbasedtracked.h
+* landbasedtracked.cpp
+* landbasedwheeled.h
+* landbasedwheeled.cpp
+* algorithm.h
+* algorithm.cpp
+* api.h
+* api.cpp
+* byte.h
+* direction.h
+* maze.h
+* maze.cpp
 
 
 Overview
@@ -49,15 +49,24 @@ Overview
 * Both classes derive from the base class LandBasedRobot, which is an abstract base class.
 
 
-User Inputs
------
+To install Micromouse simulator:
+------
+	- git clone https://github.com/mackorone/mms
+	- cd mms/src 
+	- qmake && make
 
-In the Micromouse Simulator input the following:
+To launch Mircormouse simulator:
+------
+	- ./bin/mms
 
-* Name: finalproject
-* Directory: /Desktop/Workspace/FinalProject/Final-Project-Group11/src
-* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp Main/main.cpp
-* Run Command: ./a.out
+
+To download collection of maze files:
+------
+	- git clone https://github.com/micromouseonline/mazefiles.git
+
+To add maze in simulator:
+------
+	-User input in address path to the maze and selects one	in the config maze"
 
 
 Program Output
@@ -77,27 +86,30 @@ Program Output
 To run the file:
 ------
 
-	-Step 1: Extract and open the workspace in any IDE, then build and run the main.cpp file. 
-		~The zip file might contains adjacent files, make sure to that it is stored in the workspace 
-		for the code to run. Otherwise. specify the location address in the code.
+	-Step 1: Extract and open the workspace in any IDE. 
+		*The zip file might contains adjacent files, make sure to that the workspace is stored in one common file. eg: /home/controls/ENPM809Y/Workspace/FinalProject
+		for the code to run. Otherwise. specify the location address in the code and configure simulation mouse input.
 
-	-Step 2: In the Micromouse Simulator input the following:
+	-Step 2: User input in the Micromouse Simulator (Config: Mouse) the following:
 
-		* Name: finalproject
-		* Directory: /Desktop/Workspace/Finalproject/Final-Project-Group11/src
-		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Heap/heap.cpp History/history.cpp Algorithm/algorithm.cpp Main/main.cpp
+		* Name: FinalProject
+		* Directory: eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/Final-Project-Group11/src
+		(if directory does not work is because the file is store in a different location or the name of your machine was not added in the directory path)
+		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp ../main.cpp
 		* Run Command: ./a.out
 
-To install Micromouse simulator:
-------
-	- git clone https://github.com/mackorone/mms
-	- cd mms/src 
-	- qmake && make
+	-Step 3: User input in address path to the maze (Config: Maze) and selects one
 
-To launch Mircormouse simulator:
-------
-	- ./bin/mms
+		* eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/mazefiles/classic/50.txt
+		(if address path does not work is because the file is store in a different location or the name of your machine was not added in the address path)
 
+	-Step 4: Click Build
+
+	-Step 5: Click Run
+
+	-Step 6: You are able to use speed bar, Pause, cancel and Reset buttons when the program is running.
+
+![Hierarchy Diagram](/home/controls/ENPM809Y/Workspace/Final-Project-Group11/Final-Project-Group11/doc/mms.png?raw=true)
 
 Maze:
 ------
@@ -105,7 +117,10 @@ Maze:
 * All maze have the same dimensions 16 x 16 cells with a peremeter around it making it [0,15]x[0,15]
 * The robot has not previous knowledge of any wall including the perimeter walls.
 		-Walls are discovered only when robot tries to drive through a wall
-* All of the maze have the same goal at the center with coordinates (7,7;7,8;8,7;8,8)
+* All of the maze have the same goal at the center with coordinates (7,7;7,8;8,7;8,8).
+
+
+
 
 Robot:
 -----
@@ -129,87 +144,150 @@ algorithms.
 Implementation
 -----
 
-The program has several classes: 
-LandBasedRobot
-LandBasedTracked
-LandBasedWheeled
-Algorithm
-API
-Maze
+The program has several classes: LandBasedRobot, LandBasedTracked, LandBasedWheeled, Algorithm, API, Maze
 
-It has two header files. 
-Direction
-Byte
+It has two header files: Direction and Byte
 
 
-![Class Diagram](/home/controls/ENPM809Y/Workspace/ArchiveBkUp/group11-rwa3/RWA3-Group11/doc/ClassDiagram.png?raw=true)
 
-LandBasedRobot is an abstract base class that is inherited (publicly) by the two derived concrete classes LandBasedTracked and LandBasedWheeled. This program will act as the structure for the final project which will consist of two types of robots (wheeled and tracked) that will navigate a maze, and will be capable of picking up and releasing various objects contained in the maze.
+The structure of the program is based on OOP (Object Oriented Programming) in order to produce a more efficient and flexible program. In pursuance of using OOP, the foundation of this program is based on abstraction, encapsulation, inheritance and polymorphism.
 
-LandBasedRobot Class (public) Methods
+Single inheritance is used to connect via “Public” access specifier and recycle common methods and attributes from one base class (LandBasedRobot) to two derived classes (LandBasedWheeled and LandBasedTracked). Then, leading to more specialized methods and attributes. Since, derived classes cannot be inherited, the base class constructor or destructor (methods to start, end and initialize objects) used the method shallow copy constructor and destructor with a constant value, in order to prevent memory leak from raw pointers while keeping the program robust. Moreover smart pointer deallocates memory automatically from the heap, additionally we do not send any pointers as parameters to the classes’ LandBasedRobot/LandBasedWheeled/LandBasedTracked constructors nor do we have any pointers as attributes in these classes. The frame-work for a custom deep copy constructor was created originally so we decided to keep it in the code despite the fact that the compiler performs a shallow copy constructor by default.
+
+In order to prevent name collision and garbage output data in the global scope, we used namespace (fp) for the classes named above. We decide to keep the attributes for every class protected, in order to have more control of the program’s data management. In order to view (accessors) or change (mutators) an attribute, public methods are provided for the specific attribute. Furthermore, to keep the program secure and robust we specified all of the accessors to be constant and all the mutators to void their output.
+
+![Hierarchy Diagram](/home/controls/ENPM809Y/Workspace/Final-Project-Group11/Final-Project-Group11/doc/HierarchyDiagram.png?raw=true)
+
+Given these points, abstraction and encapsulation leads to a more organized, effective and flexible code which in return, allowed us to use inheritance. Organized because it separates the class definition in a header file (.h) and class implementation in a source file (.cpp). Effective because it does not need to compile the header file. Hence, speeding up the compile time.  Flexible because it allows us to connect the header file with any other source file keeping the implementation independent and secure. Consequently, making the program more efficient, flexible and easier to troubleshoot.
+
+
+LandBasedRobot Class
+=====
+The LandBasedRobot is the only base class, it uses namespace “fp” in order to distinglish itself in the global scope. This class is set up to be of type abstract which at least contains one pure virtual method and  Moreover, it is an abstract type in order to prevent the creation of objects from it because it is too generic Hence, it does not require a method implementation for the pure virtual method  in the source file. Additionally this class is split in two files
+Public Methods
+-----
+1. virtual void moveForward() = 0;// Move the robot forward.
+2. virtual void turnLeft() = 0;// Rotate the robot 90 degrees counter-clockwise.
+3. virtual void turnRight() = 0;// Rotate the robot 90 degrees clockwise.
+
+
+Protected Attributes
 -----
 
-1. LandBasedRobot(std::string, int x, int y): Base class constructor which currently takes in three parameters, std::string name, int x, and int y, and assigns them to the attributes name_, x_, and y_
-2. LandBasedRobot(const LandBasedRobot &source): Base class copy constructor which takes in one parameter, const LandBasedRobot &source, and performs a deep copy operation on each of the elements/attributes contained within the LandBasedRobot object being copied
-3. ~LandBasedRobot(): Base class destructor
-4. GoUp(int x, int y): Pure virtual method that takes in two parameters, intx and int y, which will move the robot up in the maze
-5. GoDown(int x, int y): Pure virtual method that takes in two parameters, intx and int y, which will move the robot down in the maze
-6. TurnLeft(int x, int y): Pure virtual method that takes in two parameters, intx and int y, which will move the robot left in the maze
-7. TurnRight(int x, int y): Pure virtual method that takes in two parameters, intx and int y, which will move the robot right in the maze
-8. PickUp(std::string object): Virtual method that takes in one parameter, std::string, which will cause the robot to pick up an object in the maze
-9. Release(std::string object): Virtual method that takes in one parameter, std::string, which will cause the robot to release an object in the maze
-10. get_x(): Accessor which returns the protected x attribute that corresponds to the x coordinate of the robot's current position in the maze 
-11. get_y(): Accessor which returns the protected y attribute that corresponds to the y coordinate of the robot's current position in the maze
+1. std::string name_;// Name of the robot.
+2. int x_;// X coordinate of the robot in the maze.
+3. int y_;// Y coordinate of the robot in the maze.
+4. double speed_;// Driving speed of the robot.
+5. double width_;// Width of the base of the robot.
+6. double length_;// Length of the base of the robot.
+7. double height_;// Height of the base of the robot.
+8. double capacity_;// Payload of the arm.
+9. char direction_;// Direction that the robot is facing in the maze. The diﬀerent possibilities are 'N' (north), 'E' (east), 'W' (west), 'S' (south).
 
-LandBasedRobot Class (protected) Attributes
+
+
+LandBasedTracked Class
+=====
+LandBasedTracked is a derived class from LandBasedRobot, which refers to the header file of the base class. Thus, accessed all the public methods and attributes from the base class. This derived class is capable of accessing the protected attribute from the base class by using inheritance, accessors and mutators. This class also uses namespace “fp” in order to prevent name collision with other classes thus making the program more robust. Additionally, dynamic polymorphism is achieved by using smart pointers and references to objects from the base class as a result we can assign different definition to the same method multiple times during runtime. Moreover, LandBasedTracked is set up as concrete class by overriding all pure virtual methods, this is done to instantiate objects and define all their methods from remote classes. Finally, this class is split in two files.
+
+Public Methods
 -----
 
-1. std::string name_;// Name of the robot
-2. double speed_;// Driving speed of the robot
-3. double width_;// Width of the base of the robot
-4. double length_;// Length of the base of the robot
-5. double height_;// Height of the base of the robot
-6. double capacity_;// Payload of the arm
-7. int x_;// X coordinate of the robot in the maze
-8. int y_;// Y coordinate of the robot in the maze 
+1.  virtual void moveForward() override;// Move the robot forward.
+2. virtual void turnLeft() override;// Rotate the robot 90 degrees counter-clockwise.
+3. virtual void turnRight() override;// Rotate the robot 90 degrees clockwise.
 
-LandBasedTracked Class (public) Methods
------
-
-1.  LandBasedTracked(std::string name, int x, int y): LandBasedRobot(name, x, y): Derived class constructor which currently takes in three parameters, std::string name, int x, and int y, and calls the Base class constructor LandBasedRobot() to assign values to the three parameters. The constructor dynamically allocates memory on the heap for all pointer attributes in the class and initializes them (currently to an empty sting (""))
-2. LandBasedTracked(const LandBasedTracked &source): Derived class copy constructor which takes in one parameter, const LandBasedRobot &source, and performs a deep copy operation on each of the elements/attributes contained within the LandBasedRobot object being copied by calling the base class copy constructor and dynamically allocating memory on the heap for all pointer attributes in the class
-3. ~LandBasedTracked(): Derived class destructor which also frees space allocated on the heap for the pointer attributes by calling delete on the pointers allocated by new
-4. GoUp(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot up in the maze
-5. GoDown(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot down in the maze
-6. TurnLeft(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot left in the maze
-7. TurnRight(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot right in the maze
-8. PickUp(std::string object): Overrides the virtual method from the base class LandBasedRobot that takes in one parameter, std::string, which will cause the robot to pick up an object in the maze
-9. Release(std::string object): Overrides virtual method from the base class LandBasedRobot that takes in one parameter, std::string, which will cause the robot to release an object in the maze
-
-LandBasedTracked Class (protected) Attributes
+Protected Attributes
 -----
 
 1. std::string *track_type;// Type of track mounted on the robot
 
-LandBasedWheeled Class (public) Methods
+LandBasedWheeled Class
+======
+LandBasedWheeled is a derived class from LandBasedRobot, hence it refers to the header file of the base class. Additionally, it accessed all the methods and attributes from the base class because it is to public access specifiers. Although the attributes from base class are set to be protected, the derived class is capable of access through inheritance, accessors and mutators. This class also uses namespace “fp” in order to distinguish its methods and attributes in the global scope in order to prevent name collision with other classes thus making the program more robust. Additionally, dynamic polymorphism is achieved by using smart pointers and references to objects from the base class as a result we can assign different definition to the same method during runtime. Furthermore, LandBasedWheeled is set up as concrete class by overriding all pure virtual methods, in order to instantiate objects and define all their methods. Finally, this class is split in two files.
+
+Public Methods
 -----
 
-1.  LandBasedTracked(std::string name, int x, int y): LandBasedRobot(name, x, y): Derived class constructor which currently takes in three parameters, std::string name, int x, and int y, and calls the Base class constructor LandBasedRobot() to assign values to the three parameters. The constructor dynamically allocates memory on the heap for all pointer attributes in the class and initializes them (currently to an empty sting (""))
-2. LandBasedTracked(const LandBasedTracked &source): Derived class copy constructor which takes in one parameter, const LandBasedRobot &source, and performs a deep copy operation on each of the elements/attributes contained within the LandBasedRobot object being copied by calling the base class copy constructor and dynamically allocating memory on the heap for all pointer attributes in the class
-3. ~LandBasedTracked(): Derived class destructor which also frees space allocated on the heap for the pointer attributes by calling delete on the pointers allocated by new
-4. SpeedUp(int num_cells): Method that enables the robot to increase its speed, which is translated by the number of cells in the maze that the robot can traverse in each step 
-5. GoUp(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot up in the maze
-6. GoDown(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot down in the maze
-7. TurnLeft(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot left in the maze
-8. TurnRight(int x, int y): Overrides the pure virtual method from the base class LandBasedRobot in order to move the robot right in the maze
-9. PickUp(std::string object): Overrides the virtual method from the base class LandBasedRobot that takes in one parameter, std::string, which will cause the robot to pick up an object in the maze
-10. Release(std::string object): Overrides virtual method from the base class LandBasedRobot that takes in one parameter, std::string, which will cause the robot to release an object in the maze
+1. void speedUp(int num_cells);// The robot can increase its speed, which is translated by the number of cells in the maze that the robot can traverse in each step.
+2. virtual void moveForward() override;// Move the robot forward.
+3. virtual void turnLeft() override;// Rotate the robot 90 degrees counter-clockwise.
+4. virtual void turnRight() override;// Rotate the robot 90 degrees clockwise.
 
-LandBasedWheeled Class (protected) Attributes
+Protected Attributes
 -----
 
 1. int wheel_number;// Number of wheels mounted on the robot
-2. std::string *wheel_type;// Type of wheels mounted on the robot
 
+API Class
+=====
 
+The API class was taken directly from the API class as found in the MMS program which can be found on mackorone’s MMS github page as referenced in the References section of this report.
+
+* The Algorithm class makes all calls to the methods contained within the API class in order to interact with the MMS (Micromouse Simulator). 
+
+* Header file (.h)
+   1. Method prototypes have public access identifiers. The main purpose of the class is to act as an interface between our program and the MMS program. 
+   2. All of the attributes of this class are public, and they all use type byte from class header byte.h. This is done in order to have the code more intuitive when manipulating bit data
+
+* Source file (.cpp)
+
+   1. Method definition are public and have a void type return value. Having the implementation of the code separate from the definition improves organization and efficiency when compiling or troubleshooting. A description of each of the methods in the API class can be found in the README.md file for the MMS program on mackorone’s mms github page as referenced in the References section.
+
+Algorithm Class (Depth First Search)
+====
+
+This class uses namespace “fp” in order to distinguish its methods and attributes in the global scope in order to prevent name collision with other classes or external files. The Algorithm class handles the majority of the program’s functionality. The Algorithm Class contains the attributes and methods used by the robot to navigate through the maze, to update the robot’s representation of the maze, update robot class attributes, and to update the user’s view of the robot and the maze in the MMS.
+
+The algorithm first checks the edges of each cell in the following order: 
+
+   1. Down (South)
+   2. Right (East)
+   3. Up (North)
+   4. Left (West)
+
+We choose to use DFS as it meets the requirements of this project well. It finds a suboptimal path, with a lower space complexity. Since our goal is not to find the optimal path but reach the goal, DFS works faster than BFS (Breadth First Search). Moreover, BFS explores all the surrounding nodes of the current position before moving, which implies that it will  have multiple depth branches searching at the same time. Although this could find the shortest path to the goal position, it will not be practical if used with a real life robot, because the robot will have to move back and forth multiple times. Thus, having more than double the travel distance compared to DFS. Therefore, DFS will in general find the path faster but not necessary the shortest path.
+
+If the robot encounters a wall at any of the edges of the cell, it marks the direction as known, sets a wall at that location, and proceeds to check the next direction (next direction is accomplished by rotating left or 90°counterclockwise). If no wall is encountered, the robot moves one cell forward and commits the previous cell’s information to it’s memory of the path that it has travelled in order to get from start to goal. This path memory is stored in an std::vector of byte type objects. Each of the objects stored in the vector contain the cell number, x-coordinate of the cell, and y-coordinate of the cell. This vector allows the robot to have a memory of which cells it has been to and in which order it has been to each. This capability assists the robot in backtracking, which is explained in greater detail later in this section. In this way the robot will continue to explore the maze as far (as deeply) as possible along each of these directions until the goal position is discovered or all paths have been exhausted along that route. When the robot encounters a “dead end”, the robot begins backtracking in order to continue searching the unknown directions of the previously travelled cells. As it leaves the “dead end” cell, it updates its memory of the travelled path by removing the “dead end” cell from its memory by calling the pop_back() method on the vector that stores the previously traversed cells. In this way, by the time the robot reaches the goal position it will have stored only the “success path” (from start to goal) in the vector. If no path exists from start to goal position the robot backtracks until it returns to the starting position, and exits the program (clearing all maze, robot class, and API set MMS data, and calling the appropriate derived class and base class destructors). 
+
+Public Methods
+-----
+
+1. void solve(std::shared_ptr<LandBasedRobot> robot);//solve the maze with the object robot
+2. void colorCenter(char color);//select color of the center (goal of the maze)
+3. void setCellWall(bool isWall);//method to assign a wall into maze
+4. void reset(std::shared_ptr<LandBasedRobot> robot, std::vector<byte> path_vector);//reset bottom will stop program
+5. void drawPath(std::vector<byte> path_vector);//draw path that will solve the maze
+
+Protected Attributes
+-----
+
+1. byte robot_x; // X position of the robot
+2. byte robot_y; // Y position of the robot
+3. byte robot_d; // Direction of the robot
+
+Maze Struct Class
+====
+The maze is assumed to be 16x16 in dimension. This format is expected by the MMS and subsequently, by the API class as well. The maze coordinates lie between 0 and 15, i.e. x: [0,15] and y: [0,15]. The maze struct used in the program was based largely off of that found in mackorone’s mackalgo program due to its simplicity. 
+
+The data stored and managed by the maze struct is constructed as an 8 bit number, with bits 7-down to-4 corresponding to whether the direction of the cell is known (has been seen or travelled previously), and bits 3-downto-0 corresponding to whether there is a wall at that location. These bytes are stored in a c-style array indexed by the cell number.
+
+![Hierarchy Diagram](/home/controls/ENPM809Y/Workspace/Final-Project-Group11/Final-Project-Group11/doc/MazeStruct.png?raw=true)
+
+Direction Header Class
+====
+
+The direction header file is taken and repurposed from mackorone's mackalgo program. It stores the four cardinal directions as numbers. NORTH is mapped to 0, EAST is mapped to 1, WEST is mapped to 2, and SOUTH is mapped to 3 using a C++ struct. The data type used for this class is “struct” which  help us organize variables of different data types into a single aggregate data type. Additionally, the variables are stored as a static constant byte.
+
+Byte Header Class
+====
+
+The byte header file is taken and repurposed from mackorone's mackalgo program. It helps store bit data from algorithm, maze, direction classes. We used two different variables of type unsigned and typedef (type definition). The last keyword enables the possibility to make new alias name for different data type, such as int and char. The purpose of this data type is to make the code clearer and easier to change the underlying data types used in the code. Thus, making the code more intuitive, easier to manipulate and access it. 
+
+References
+====
+1. Kootbally Zeid, Notes and information from class ENPM809Y-Fall2019, Lecture 1-14
+2. Mackorone’s MMS Github Page: https://github.com/mackorone/mms
+3. Mackorone’s Mackalgo Github Page: https://github.com/mackorone/mackalgo
+4. Micromouseonline’s Mazefiles Github Page: https://github.com/micromouseonline/mazefiles
 

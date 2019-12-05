@@ -4,10 +4,10 @@
 
 Project Statement
 ========
-We are tasked to develop only the structure of a project using object-oriented programming, inheritance, and dynamic polymorphism, that will be used to drive one of two robot in a maze, to reach the goal location which is the center of the maze
+We are tasked to develop a project using object-oriented programming, inheritance, and dynamic polymorphism. The prject will be used to drive one of the two robots (wheeled or tracked) in a maze, to reach the goal location which is located at the center of the maze. 
 
 
-It is currently hosted on GitHub at 
+The project is currently hosted on GitHub:
 
 https://github.com/sully892/Cu_Ag_Au/Final-Project-Group11
 
@@ -18,9 +18,7 @@ Files
 There is one file for this project:
 	Final-Project-Group11.zip
 
-To run the file, extract and open the workspace in any IDE, build, and run the main.cpp file. 
-
-The program consists of the following files:
+The program consists of the following code files:
 
 main.cpp
 landbasedrobot.h
@@ -32,7 +30,7 @@ landbasedwheeled.cpp
 algorithm.h
 algorithm.cpp
 api.h
-app.cpp
+api.cpp
 byte.h
 direction.h
 maze.h
@@ -42,53 +40,14 @@ maze.cpp
 Overview
 ========
 
-* The scenario uses two types of robots that have a different driving mechanism and characteristics.
+* There are two types of robots with different driving mechanism and characteristics: Wheeled vs Tracked.
 
-* The ﬁrst robot belongs to the C++ class LandBasedWheeled, which is a derived concrete class
+* The ﬁrst robot belongs to the C++ class LandBasedWheeled, which is a derived concrete class.
 
-* The second robot belongs to the C++ class LandBasedTracked, which is a derived concrete class
+* The second robot belongs to the C++ class LandBasedTracked, which is a derived concrete class.
 
-* Both classes derive from the base class LandBasedRobot, which is an abstract base class
+* Both classes derive from the base class LandBasedRobot, which is an abstract base class.
 
-
-User Inputs
------
-
-In the Micromouse Simulator input the following:
-
-* Name: finalproject
-* Directory: /Desktop/Workspace/FinalProject/Final-Project-Group11/src
-* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp Main/main.cpp
-* Run Command: ./a.out
-
-
-Program Output
-------
-
-* Generate path from current position (S)(0,0) to the center of the maze (G)(7,7;7,8;8,7;8,8)
-* After a path is found and generated
-		-Using down, right, up, left sequence
-* A robot will follow the path using the function
-		-After each turn of the robot the function MoveFoward needs to be call each time
-* Micromouse simulator will be used to display the result on the screen
-* Program exits when
-		*Robot reaches G or
-		*There is no solution from S to G
-
-
-To run the file:
-------
-
-	-Step 1: Extract and open the workspace in any IDE, then build and run the main.cpp file. 
-		~The zip file might contains adjacent files, make sure to that it is stored in the workspace 
-		for the code to run. Otherwise. specify the location address in the code.
-
-	-Step 2: In the Micromouse Simulator input the following:
-
-		* Name: finalproject
-		* Directory: /Desktop/Workspace/FinalProject/Final-Project-Group11/src
-		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp Main/main.cpp
-		* Run Command: ./a.out
 
 To install Micromouse simulator:
 ------
@@ -100,20 +59,72 @@ To launch Mircormouse simulator:
 ------
 	- ./bin/mms
 
+
+To download collection of maze files:
+------
+	- git clone https://github.com/micromouseonline/mazefiles.git
+
+To add maze in simulator:
+------
+	-User input in address path to the maze and selects one	in the config maze"
+
+
+Program Output
+------
+
+* Generate path from current position (S)(0,0) to the center of the maze (G)(7,7;7,8;8,7;8,8)
+* After a path is found and generated
+		-Using down, right, up, left sequence
+* A robot will follow the path using the function
+		-After each turn of the robot the function MoveFoward needs to be called.
+* Micromouse simulator will be used to display the robot simulation on the screen.
+* Program exits when
+		*Robot reaches G. 
+		*There is no solution from S to G.
+
+
+To run the file:
+------
+
+	-Step 1: Extract and open the workspace in any IDE. 
+		*The zip file might contains adjacent files, make sure to that the workspace is stored in one common file. eg: /home/controls/ENPM809Y/Workspace/FinalProject
+		for the code to run. Otherwise. specify the location address in the code and configure simulation mouse input.
+
+	-Step 2: User input in the Micromouse Simulator (Config: Mouse) the following:
+
+		* Name: FinalProject
+		* Directory: eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/Final-Project-Group11/src
+		(if directory does not work is because the file is store in a different location or the name of your machine was not added in the directory path)
+		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp ../main.cpp
+		* Run Command: ./a.out
+
+	-Step 3: User input in address path to the maze (Config: Maze) and selects one
+
+		* eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/mazefiles/classic/50.txt
+		(if address path does not work is because the file is store in a different location or the name of your machine was not added in the address path)
+
+	-Step 4: Click Build
+
+	-Step 5: Click Run
+
+	-Step 6: You are able to use speed bar, Pause, cancel and Reset buttons when the program is running.
+
 Maze:
 ------
 
-* All maze have the same dimensions 16 x 16 cells [0,15] by [0,15]
-* All maze have walls around their perimeter
-		-The robot has not previous knowledge of any wall including the perimeter walls.
+* All maze have the same dimensions 16 x 16 cells with a peremeter around it making it [0,15]x[0,15]
+* The robot has not previous knowledge of any wall including the perimeter walls.
 		-Walls are discovered only when robot tries to drive through a wall
-* All maze have the same goal at the center with coordinates (7,7;7,8;8,7;8,8)
+* All of the maze have the same goal at the center with coordinates (7,7;7,8;8,7;8,8).
+
+
+
 
 Robot:
 -----
 
-* Robot will be choose from Wheeled:Husky vs Tracked:LT2-F
-* Robot will always start at position (0,0), and will always face north.
+* Robot will be selected from Wheeled:Husky vs Tracked:LT2-F
+* Robot will always start at position (0,0), facing north.
 
 Micromouse Simulator:
 -----
@@ -126,6 +137,5 @@ algorithms.
 		2. walls being added in the maze
 		3. show the path generated by search algorithm
 			-interact using build-in methods from mms project with class API
-
 
 
