@@ -9,7 +9,7 @@ We are tasked to develop a project using object-oriented programming, inheritanc
 
 The project is currently hosted on GitHub:
 
-https://github.com/sully892/Cu_Ag_Au/Final-Project-Group11
+https://github.com/sully892/Cu_Ag_Au/tree/master/FinalProject
 
 
 Files
