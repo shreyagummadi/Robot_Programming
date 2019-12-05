@@ -57,7 +57,15 @@ To install Micromouse simulator:
 
 To launch Mircormouse simulator:
 ------
-	- ./bin/mms
+* In a terminal go to the location of the mms program
+		
+		eg:/home/controls/ENPM809Y/Workspace/Final-Project-Group11/FinalProject/mms/mms-master/bin 
+
+(if directory does not work is because the file is store in a different location or the name of your machine was not added in the directory path)
+
+* Run the program
+
+		./mms
 
 
 To download collection of maze files:
@@ -66,7 +74,7 @@ To download collection of maze files:
 
 To add maze in simulator:
 ------
-	-User input in address path to the maze and selects one	in the config maze"
+	-User input in address path to the maze and selects one	in the config maze" (see details steps below)
 
 
 Program Output
@@ -74,40 +82,56 @@ Program Output
 
 * Generate path from current position (S)(0,0) to the center of the maze (G)(7,7;7,8;8,7;8,8)
 * After a path is found and generated
-		-Using down, right, up, left sequence
+
+		Using down, right, up, left sequence
+
 * A robot will follow the path using the function
-		-After each turn of the robot the function MoveFoward needs to be called.
+
+		After each turn of the robot the function MoveFoward needs to be called.
+
 * Micromouse simulator will be used to display the robot simulation on the screen.
+
 * Program exits when
-		*Robot reaches G. 
-		*There is no solution from S to G.
+
+		Robot reaches G. 
+		There is no solution from S to G.
 
 
 To run the file:
 ------
 
-	-Step 1: Extract and open the workspace in any IDE. 
-		*The zip file might contains adjacent files, make sure to that the workspace is stored in one common file. eg: /home/controls/ENPM809Y/Workspace/FinalProject
-		for the code to run. Otherwise. specify the location address in the code and configure simulation mouse input.
+* Step 1: Extract and open the workspace in any IDE. The zip file might contains adjacent files, make sure to that the workspace is stored in one common file for the code to run. Otherwise. specify the location address in the code and configure simulation mouse input.
+ 
+		eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/FinalProject
 
-	-Step 2: User input in the Micromouse Simulator (Config: Mouse) the following:
+* Step 2: User input in the Micromouse Simulator (Config: Mouse) the following:
 
-		* Name: FinalProject
-		* Directory: eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/Final-Project-Group11/src
-		(if directory does not work is because the file is store in a different location or the name of your machine was not added in the directory path)
-		* Build command: g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp ../main.cpp
-		* Run Command: ./a.out
+	- Name: 
 
-	-Step 3: User input in address path to the maze (Config: Maze) and selects one
+			FinalProject
 
-		* eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/mazefiles/classic/50.txt
-		(if address path does not work is because the file is store in a different location or the name of your machine was not added in the address path)
+	- Directory (if directory does not work is because the file is store in a different location or the name of your machine was not added in the directory path): 
 
-	-Step 4: Click Build
+			eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/FinalProject/Final-Project-Group11/src
+		
+	- Build command: 
 
-	-Step 5: Click Run
+			g++ API/api.cpp LandBasedRobot/landbasedrobot.cpp LandBasedTracked/landbasedtracked.cpp LandBasedWheeled/landbasedwheeled.cpp Maze/maze.cpp Algorithm/algorithm.cpp ../main.cpp
+		
+	- Run Command: 
 
-	-Step 6: You are able to use speed bar, Pause, cancel and Reset buttons when the program is running.
+			./a.out
+
+* Step 3: User input in address path to the maze (Config: Maze) and selects one (if address path does not work is because the file is store in a different location or the name of your machine was not added in the address path).
+
+		eg: /home/controls/ENPM809Y/Workspace/Final-Project-Group11/FinalProject/mazefiles/classic/50.txt
+		
+
+* Step 4: Click Build
+
+* Step 5: Click Run
+
+* Step 6: You are able to use speed bar, Pause, cancel and Reset buttons when the program is running.
 
 Maze:
 ------
